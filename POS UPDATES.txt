@@ -1,0 +1,198 @@
+--Cover Analysis - Product Group---------
+
+Insert into PRG_MENU values ('PO ','2','8','6','E','PO~2~8~6~E ','PO~1~0~8~E ','Cover Analysis - Product Group','1','POSREPCVRALYPRODGRP',Null,'0','0','0','1','Admin ','09/04/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\POS\POSRptCoverAnalysisPrdGrp.aspx',Null,Null)
+GO
+UPDATE PRG_MENU set W_IND=1,W_LINK='..\PosAnalysis\POSACoverAnalyProdGroup' where MODULE_ID='PO' and PROGRAM_LINK_ID='POSREPCVRALYPRODGRP'
+GO
+
+--BILL SPLIT AUDIT ----------------
+
+Insert into PRG_MENU values ('PO      ','2','9','41','E','PO~2~9~41~E    ','PO~1~0~9~E     ','Bill Split Audit','1',
+'POSMNUREP2BILLSPLITADT',Null,'0','0','0','1','Admin ','04/21/2008 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,
+'0',Null,Null,Null,Null,Null)
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosReport2\POSRpt2BillSplitAudit' WHERE PROGRAM_LINK_ID ='POSMNUREP2BILLSPLITADT'
+
+
+
+--Bill Settlement - Time Difference Audit
+-----------------------------------------
+
+Insert into PRG_MENU values ('PO     ','2','9','8','E','PO~2~9~8~E    ','PO~1~0~9~E    ','Bill Settlement - Time Difference Audit','1','POSMNUREP2TIMEDIFFAUDIT',Null,Null,Null,Null,'1','Admin ','05/24/2003 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+
+update prg_menu set w_ind =1, w_link = '..\PosReport2\POSRpt2SetlTmDifAudit'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUREP2TIMEDIFFAUDIT'
+go
+
+
+--KotReprintAudit
+----------------
+
+Insert into PRG_MENU values ('PO      ','2','9','9','E','PO~2~9~9~E     ','PO~1~0~9~E     ','KOT Reprint Audit','1','POSMNUREPPOSKOTREPRNAUDIT',Null,Null,Null,Null,'1','Admin ','05/24/2003 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosReport2\POSRpt2KotReprintAudit'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUREPPOSKOTREPRNAUDIT'
+go
+
+
+--Stewardwise Sales Analysis
+-------------------------
+Insert into PRG_MENU values ('PO      ','2','8','8','E','PO~2~8~8~E     ','PO~1~0~8~E     ','Stewardwise Sales Analysis','1','POSREPSTWSALESANALY',Null,'0','0','0','1','Admin ','09/04/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\POS\POSRptStewSalesAnal.aspx',Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosAnalysis\POSAStewardwiseSalesAnalysis' WHERE PROGRAM_LINK_ID ='POSREPSTWSALESANALY'
+
+--NON POPULARITY ANALYSIS
+-------------------------
+Insert into PRG_MENU values ('PO      ','2','8','3','E','PO~2~8~3~E     ','PO~1~0~8~E     ','Non-Popularity Analysis','1','POSMNUREPNONPOPANLY',Null,'0','0','0','1','Admin ','09/04/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosAnalysis\POSANonPopularityAnalysis' WHERE MODULE_ID='PO' AND PROGRAM_LINK_ID = 'POSMNUREPNONPOPANLY'
+GO
+
+
+
+--KOT DETAILS
+------------
+Insert into PRG_MENU values ('PO      ','2','4','11','E','PO~2~4~11~E    ','PO~1~0~4~E     ','KOT Details','1','POSMNUREPKOTDET',Null,'0','0','0','1','Admin ','09/04/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosReport1\POSRptKotDetails'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUREPKOTDET'
+go
+
+--TIPS(POS)--------------
+
+Insert into PRG_MENU values ('PO      ','2','4','34','E','PO~2~4~34~E    ','PO~1~0~4~E     ','Tips(POS)','1','POSRPTTIPS',
+Null,Null,Null,Null,'1','Admin ','05/24/2003 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosReport1\POSRptTips'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSRPTTIPS'
+go
+
+
+--SPECIAL MENU 
+-------------
+
+Insert into PRG_MENU values ('PO      ','2','12','62','E','PO~2~12~62~E   ','PO~1~0~12~E    ','Special Menu','1','POSMNUMSTSPLMNU',Null,'1','1','1','1','Admin ','01/12/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosMasterTS\POSMstTsSpecialMenu' WHERE PROGRAM_LINK_ID ='POSMNUMSTSPLMNU'
+go
+
+
+
+
+-- Sales Analysis-------------------------
+Insert into PRG_MENU values ('PO      ','2','8','12','E','PO~2~8~12~E    ','PO~1~0~8~E     ','Sales Analysis','1','POSMNUANSALES',
+Null,'0','0','0','1','Admin ','06/21/2004 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+GO
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosAnalysis\POSASalesAnalysis' WHERE PROGRAM_LINK_ID ='POSMNUANSALES'
+go
+
+--Item Instruction----------------
+Insert into PRG_MENU values ('PO      ','2','12','15','E','PO~2~12~15~E   ','PO~1~0~12~E    ','Item Instruction','1','POSMNUMSTITMINST',Null,'0','1','1','1','Admin ','01/12/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+--Update Script
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosMasterTS\POSMstTsItemInstruction' WHERE PROGRAM_LINK_ID ='POSMNUMSTITMINST'
+GO
+
+--Table Groups----------------
+
+Insert into PRG_MENU values ('PO     ','2','2','65','E','PO~2~2~65~E   ','PO~1~0~2~E    ','Table Groups','1','POSMNUMSTTBLGROUP',Null,'1','1','1','1','Admin ','12/03/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,NUll,NUll)
+--Update Script
+UPDATE PRG_MENU SET MENU_NM='Table Groups', W_IND=1,W_LINK='..\PosMaster1\POSMst1OutTableGrp' WHERE PROGRAM_LINK_ID ='POSMNUMSTTBLGROUP'
+GO
+
+--bulk update cost%----------
+
+Insert into PRG_MENU values ('PO      ','2','2','13','E','PO~2~2~13~E    ','PO~1~0~2~E     ','Update Outlet Items Bulk','1','PSMNUMSTUPOUTCOSTBUL',Null,'1','1','1','1','Admin ','08/16/2004 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosMaster1\POSMst1UpdtOutletItemCost' WHERE MODULE_ID='PO' AND PROGRAM_LINK_ID='PSMNUMSTUPOUTCOSTBUL'
+GO
+--stop sales------------
+
+Insert into PRG_MENU values ('PO      ','2','2','18','E','PO~2~2~18~E    ','PO~1~0~2~E     ','Stop Sales Item','1','PSMNUMSTSTPSALE',Null,'1','1',Null,Null,'Admin ','07/30/2012 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\PosMaster1\POSMst1StopSales' WHERE MODULE_ID='PO' AND PROGRAM_LINK_ID='PSMNUMSTSTPSALE'
+GO
+
+--NC - KOT Details-------------
+
+Insert into PRG_MENU values ('PO      ','2','9','20','E','PO~2~9~20~E    ','PO~1~0~9~E     ','NC KOT - Detail','1','POSREPKOTNCKOTDETAIL',Null,'0','0','0','1','Admin ','09/04/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\POS\POSRptNcKotDet.aspx',Null,Null)
+GO
+
+update prg_menu set w_ind =1, w_link = '..\PosReport2\POSRpt2NCKOTDetail'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSREPKOTNCKOTDETAIL'
+GO
+
+--HAPPY HOURS DISCOUNT----------
+
+update PRG_MENU set W_LINK='..\PosMaster2\POSMst2HpyHrsDisc' where MODULE_ID='PO' and PROGRAM_LINK_ID='POSMNUMSTHAPPYHRSDISC'
+go
+
+--FREE ITEM-----------------
+
+Insert into PRG_MENU values ('PO      ','2','12','82','E','PO~2~12~82~E   ','PO~1~0~12~E    ','Free Item','1','POSMNUMSTFREEITEM',Null,'1','1','1','1','Admin ','06/27/2018 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\PosMasterTS\POSMstTsFreeItem',W_IND=1 WHERE MODULE_ID='PO' AND PROGRAM_LINK_ID='POSMNUMSTFREEITEM'
+GO
+
+---Guest in search--------
+
+UPDATE PRG_MENU set W_LINK='..\Reports\FoGuestInHouse?VMD=PO' where MODULE_ID='PO' And PROGRAM_LINK_ID='POSREPGUESTSRCH'
+
+--Outlet Budget------
+
+Insert into PRG_MENU values ('PO      ','2','2','35','E','PO~2~2~35~E    ','PO~1~0~2~E   ','Outlet Budget','1','POSMNUMSTOUTSALBUDG',Null,'1','1','1','1','Admin ','12/03/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update prg_menu set w_ind =1, w_link = '..\PosMaster1\POSMst1OutletBudget',MENU_NM='Outlet Budget'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUMSTOUTSALBUDG'
+Go
+
+alter table PS_CONTROL add BUD_SES_IND Numeric(1,0) NULL
+update PS_CONTROL set BUD_SES_IND=1  WHERE COMPANY_ID='ws'
+
+--Flash Budget Report--------------
+
+Insert into PRG_MENU values ('PO      ','2','8','66','E','PO~2~8~66~E    ','PO~1~0~8~E    ','POS Flash Budget Report','1','POSMNUANFLASHBUGRPT',Null,'0','0','0','1','Admin ','06/21/2004 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+Go
+update prg_menu set w_ind =1, w_link = '..\POSAnalysis\POSAFlashBudgetRpt'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUANFLASHBUGRPT'
+go
+
+-session wise script for flash budget----
+create table AAPS0M0813 ( COMPANY_ID char(2), O_I char(3), YYMM char(4), SESSION_ID Char(2), BD_AM Numeric(12,3), BD_PAX Numeric(5,0) , C_BY char(6),C_DT datetime,U_BY char(6),U_DT datetime CONSTRAINT PK_AAPS0M0813 PRIMARY KEY (COMPANY_ID,O_I,YYMM,SESSION_ID))
+go
+
+--Menu Master-------
+Insert  into PRG_MENU values ('PO      ','3','98','1','E','PO~3~98~1~E    ','PO~2~11~98~E   ','Menu Master','1','POSMNUMST2EMMENUMST',Null,'1','1','1','1','Admin ','09/28/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosMaster2\POSMst2MenuMaster'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUMST2EMMENUMST'
+go
+
+
+--Menu Group-----------
+
+Insert into PRG_MENU values ('PO      ','3','98','2','E','PO~3~98~2~E    ','PO~2~11~98~E   ','Menu Group','1','POSMNUMST2EMMENUGRP',Null,'1','1','1','1','Admin ','09/28/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosMaster2\POSMst2MenuGroup'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUMST2EMMENUGRP'
+go
+
+--Menu Timing----------
+
+Insert into PRG_MENU values ('PO      ','3','98','4','E','PO~3~98~4~E    ','PO~2~11~98~E   ','Menu Time','1','POSMNUMST2EMMENUTM',Null,'1','1','1','1','Admin ','09/28/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosMaster2\POSMst2MenuTiming'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUMST2EMMENUTM'
+
+--Outlet Menu----------
+
+Insert into PRG_MENU values ('PO      ','3','98','3','E','PO~3~98~3~E    ','PO~2~11~98~E   ','Outlet Menu','1','POSMNUMST2EMOUTMENU',Null,'1','1','1','1','Admin ','09/28/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind =1, w_link = '..\PosMaster2\POSMst2OutletMenu'  where MODULE_ID = 'PO' and PROGRAM_LINK_ID = 'POSMNUMST2EMOUTMENU'
+
+--E-menu---------------
+update FC_OUTLET set E_DEF_SERV=null where COMPANY_ID='Ws' and OUTLET_TY_ID='f'
+
+--Performance Comparison-----
+Insert into PRG_MENU values ('PO      ','2','8','81','E','PO~2~8~81~E    ','PO~1~0~8~E     ','Performance Comparison','1','POSMNUANPERFCOMPR',Null,'0','0','0','1','Admin ','06/21/2004 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\POSAnalysis\POSAPerformComparison' WHERE MODULE_ID='PO' AND PROGRAM_LINK_ID='POSMNUANPERFCOMPR'
+GO
+
+--Bill Details-Stimulsoft report---------
+
+Insert into AAMSTM1241 values ('PO','1','POS002','Bill Details',Null,'BillDetails.mrt',Null,Null,Null,'1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'Bill Details',1)
+GO
