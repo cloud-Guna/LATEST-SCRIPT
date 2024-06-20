@@ -1,0 +1,463 @@
+----Grouptype master
+update prg_menu set w_ind = '1',w_link = '../FoMstMaster/FoMstGrpTy' where MODULE_ID = 'FO' and MENU_NM = 'Group Type'
+
+--New Night audit menu script
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoNightAudit' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUNANA'
+GO
+
+--Misc sales delete script
+delete from prg_menu where module_id='FO' and Program_link_id='FOMNUANALMISCSAANAL'
+delete from PRG_MENU_USER where module_id='FO' and Program_link_id='FOMNUANALMISCSAANAL'
+
+
+----Complimentary stay list
+update prg_menu set w_ind = '1',w_link = '../Reports/FoQ1ComplimentStayList' where MODULE_ID = 'FO' and PROGRAM_LINK_ID = 'FOMNURPTCOMPLSTAYLIST'
+
+----Expected Departure
+update prg_menu set w_ind = '1',w_link = '../Reports/FoQ1ExpectDepart' where MODULE_ID = 'FO' and PROGRAM_LINK_ID = 'FOMNUQUEXPDEPT'
+
+
+
+------------------------------Guest charges
+UPDATE PRG_MENU SET W_LINK = '../TravelAgentBlock/FOGuestCharges' WHERE PROGRAM_LINK_ID = 'FOMNUCASGUCHR' AND MODULE_ID = 'FO'
+GO
+--Tempfolio appl
+select pm_ind from  fo_cont
+update fo_cont set pm_ind =2
+
+--reservation charge applicable
+update fo_control set n27_ind=1
+
+-- misc sales  applicable
+update FO_CONTROL set Q27_IND =1
+
+select P6_Ind from fo_control
+--if =1 then negative can be allowed
+update fo_control set p6_ind=null
+
+--------------New master menus to be tested
+Company Profile
+Revenue
+Misc.Payment/Collection Revenue
+User Privileges
+NA Main Sub Group Link
+NA Sub group
+Night Audit Revenue Sub Group
+--menu scripts
+update prg_menu set W_LINK = '../FoMstMaster/FoMstCompany' where  program_link_id = 'FOMNUMSTCMPNYMST'
+update prg_menu set W_LINK = '../FoMstMaster/FoMstRevenue' where  program_link_id = 'FOMNUMSTREV'
+update prg_menu set W_LINK = '../FoMstMaster/FoMstUserPrivileges' where  program_link_id = 'FOMSTUSERPRVLG'
+update prg_menu set W_LINK = '../FoMstMaster/FoMstMiscPayCollecRev' where  program_link_id = 'FOMSTSETMISCPAYCOLREV'
+update prg_menu set W_LINK = '../FoMstMaster/FoMstNgtAudtMainGrp' where  program_link_id = 'FOMNUMSTNARMGROUP'
+update prg_menu set W_LINK = '../FoMstMaster/FoMstNASubGroup' where  program_link_id = 'FOMNUMSTNARSGOUP'
+update prg_menu set W_LINK = '../FoMstMaster/FoMstNAAudtMnSubGrp' where  program_link_id = 'FOMNUMSTNAREVLINK'
+
+--Erase check-in audit(new menu)
+Insert into PRG_MENU values ('FO      ','2','13','88','E','FO~2~13~88~E   ','FO~1~0~13~E    ','Erase Check-In Audit','1','FOMNUREP2ERASCHKINAUD',Null,'0','0','0','1','Admin ','10/27/2012 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind=1,w_link='..\Reports\FoR2EraseCheckinAuditRpt' where module_id='FO' and program_link_id='FOMNUREP2ERASCHKINAUD'
+go
+
+-- entries posted revenuewise- entries posted userwise to be removed.
+DELETE FROM PRG_MENU WHERE PROGRAM_LINK_ID= 'FOMNUREPENTFOUID'
+DELETE FROM PRG_MENU_USER WHERE PROGRAM_LINK_ID= 'FOMNUREPENTFOUID'
+update PRG_MENU set W_LINK='..\Reports\FoR1EntriesPostedRpt' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUREPENTFOREV'
+go
+
+----Reservation log
+UPDATE PRG_MENU SET W_IND=1,W_LINK ='..\Reports\FoQ1ReservationLog' WHERE  MODULE_ID='FO' AND PROGRAM_LINK_ID ='FOMNURPTRSVLOG'
+GO
+
+--Vacant Rooms
+update prg_menu set w_ind = '1',w_link = '../Reports/FoRooms' where module_id = 'FO' and PROGRAM_LINK_ID = 'FOMNUQUVAROOM'
+go
+delete from prg_menu where module_id='FO' and program_link_id in ('FOMNUQULINKROOM','FOMNUQUBLKROOM')
+go
+
+--Tariff Reposted / Deleted - Audit
+update prg_menu set w_ind = '1',w_link = '../Reports/FoTariffPostRpt' where module_id = 'FO' and PROGRAM_LINK_ID = 'FOMNUREPTARIFPOST'
+go
+
+--void bills
+update prg_menu set w_ind = '1',w_link = '../Reports/FoVoidPendBill' where module_id = 'FO' and PROGRAM_LINK_ID = 'FOMNUREPVOIDBILL'
+go
+
+---------Expected 'Expected Arrival List' is removed, 'Expected Arrivals' menu is changed as webix
+delete from prg_menu where module_id='FO' and program_link_id= 'FOMNUQUEXPARRLIST'
+go
+update prg_menu set w_ind=1, w_link='../Reports/FoQ1ExArrivalList' where module_id='FO' and program_link_id= 'FOMNUQUEXPARR'
+go
+
+----------Today's arrival
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\Reports\FoTdyArrival' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID ='FOMNUQUTODAYARR'
+GO
+
+----------Today's departure
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\Reports\FoTdyDepart' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID ='FOMNUQUTODAYDEPT'
+GO
+
+----------Guest birthday list
+UPDATE prg_menu SET W_LINK = '../Reports/FoNightAuditBdyAnniversary' where module_id='FO' and program_link_id='FOMNUNAAUTOMAIL'
+
+----Advance
+UPDATE PRG_MENU SET W_LINK='../TravelAgentBlock/FoResAdvance',W_IND=1 WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUCASRECPT'
+GO
+
+-----Reservation confirmation
+update PRG_MENU set W_LINK='..\HTMLViewer\FoResvConfPrint' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNURSVCONFPRN'
+go
+
+----------Alternate language
+Insert into PRG_MENU values ('MT      ','2','1','67','E','MT~2~1~67~E    ','MT~1~0~1~E     ','Alternate Language','1','MTMNUMSTRALTERNAME',Null,Null,'1',Null,'1','Admin ','11/30/2017 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update PRG_MENU set w_ind=1,W_LINK = '../Master/MstMstrAltnteNm' where MODULE_ID = 'MT' and PROGRAM_LINK_ID = 'MTMNUMSTRALTERNAME'
+go
+
+
+--- MT NA report
+UPDATE PRG_MENU SET  w_ind ='1',W_LINK='..\Reports\FoNightAuditReport?VMD=MST',W_IND=1 WHERE MODULE_ID='MT' AND PROGRAM_LINK_ID='MTMNUNANANAGAUDRPT'
+GO
+
+-----MT REVENUE master
+UPDATE PRG_MENU SET  w_ind ='1',W_LINK ='../FOMSTMASTER/FOMSTREVENUE?VMD=MST' WHERE PROGRAM_LINK_ID ='MTSETGREVENUE' AND MODULE_ID = 'MT'
+GO
+
+----------NA main group
+update PRG_MENU set  w_ind ='1',W_LINK = '../FoMstMaster/FoMstNgtAudtMainGrp?VMD=MST' where MODULE_ID = 'MT' and PROGRAM_LINK_ID = 'MTMNUMSTNARMGROUP'
+go
+
+---------NA revenue sub group
+update PRG_MENU set  w_ind ='1',W_LINK = '../FoMstMaster/FoMstNASubGroup?VMD=MST' where MODULE_ID = 'MT' and PROGRAM_LINK_ID = 'MTMNUMSTNARSGOUP'
+go
+
+--------NA main sub group link
+update PRG_MENU set  w_ind ='1',W_LINK = '../FoMstMaster/FoMstNAAudtMnSubGrp?VMD=MST' where MODULE_ID = 'MT' and PROGRAM_LINK_ID = 'MTMNUMSTNAREVLINK'
+go
+
+--Reservation advance report
+update prg_menu set W_LINK = '../Reports/FoResAdvfund' , W_IND = '1' where MODULE_ID = 'FO' and PROGRAM_LINK_ID = 'FOMNUREPADVCOLL'
+go
+
+--tax structure new
+update PRG_MENU set W_IND=1,W_LINK='../Master/MstTaxStrcutureNew' where PROGRAM_LINK_ID ='MTSETGTAXSTRUCTNEW'
+go
+
+------high balance report
+update prg_menu set w_link = '../Reports/FoQ1HighBalRpt' where module_id = 'FO' and PROGRAM_LINK_ID = 'FOMNUREPHIGHBALREP'
+
+-----Customer master
+update PRG_MENU set W_LINK = '../FoMstMaster/FoMstCompany?VMD=MST' where MODULE_ID = 'MT' and PROGRAM_LINK_ID = 'MTGENCUSTMST'
+
+------Rate code
+update PRG_MENU set W_LINK = '../FoMstMaster/FoMstRteCde' where MODULE_ID = 'FO' and PROGRAM_LINK_ID = 'FOMNUMSTROOMRATETY'
+go
+
+--Financial & Guest KPI moved to CMIS submenu & old menu removed from MIS submenu
+Delete from prg_menu where module_id='FO' and program_link_id in ('FOMNUMISLLC','FOMNUMISPRBYNAT','FOMNUMISPRBYTRV')
+go
+Insert into PRG_MENU values ('FO','2','16','15','E','FO~2~16~15~E','FO~1~0~16~E','Financial & Guest KPI','1','FOMNUMISLLC',Null,'0','0','0','1','Admin ','02/17/2018 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'',null,null)
+GO
+update PRG_MENU set W_LINK='..\Reports\FoMISFinancialGuestKPI' where PROGRAM_LINK_ID='FOMNUMISLLC'
+go
+Insert into PRG_MENU values ('FO','2','16','16','E','FO~2~16~16~E','FO~1~0~16~E','Geographical KPI','1','FOMNUMISPRBYNAT',Null,'0','0','0','1','Admin ','02/17/2018 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'',null,null)
+GO
+update PRG_MENU set W_LINK='..\Reports\FoProdByNation' where PROGRAM_LINK_ID='FOMNUMISPRBYNAT'
+go
+Insert into PRG_MENU values ('FO','2','16','17','E','FO~2~16~17~E','FO~1~0~16~E','Tour Operator & TravelAgent','1','FOMNUMISPRBYTRV',Null,'0','0','0','1','Admin ','02/17/2018 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'',null,null)
+GO
+update PRG_MENU set W_LINK='..\Reports\FoTrvOprPrdRpt' where PROGRAM_LINK_ID='FOMNUMISPRBYTRV'
+go
+
+----Bulk checkout
+Insert into PRG_MENU values ('FO      ','2','3','18','E','FO~2~3~18~E    ','FO~1~0~3~E     ','Bulk Checkout','1','FOMNUGRPCHKOUT',Null,'0','1','0','0','Admin ','01/12/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\AutoCheckout' where MODULE_ID='fo' and PROGRAM_LINK_ID='FOMNUGRPCHKOUT'
+GO
+
+------Room tariff current
+update PRG_MENU set W_LINK=' ..\Reports\FoR1RoomTariffCurrent' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUQUROOMREP'
+
+-----Room status (FO & HK)
+update prg_menu set w_link = '../reports/foroomSts' where  module_id='FO' and program_link_id='FOQRYROOMSTAT'
+update prg_menu set w_link = '../reports/foroomSts?VMD=HK' where  module_id='HK' and program_link_id='HKMNUQUROOMSTAT'
+
+------ReInstate Checkout Audit report
+Insert into PRG_MENU values ('FO      ','2','13','89','E','FO~2~13~89~E   ','FO~1~0~13~E    ','ReInstate Checkout Audit','1','FOMNUREP2REISTCHKOUTAUD',Null,'0','0','0','1','Admin ','10/27/2012 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update PRG_MENU set W_IND=1,W_LINK='..\Reports\FoR2ReinstateCheckoutAudit' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUREP2REISTCHKOUTAUD'
+go
+
+-------Sales executive master     ---- NOT released
+--update PRG_MENU set W_LINK='..\FoMstMaster\FoMstSalsExecutive' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMSTGUESTID'
+
+
+-------Guest bill reprint audit
+update PRG_MENU set W_LINK=' ..\Reports\FoR2FoGuestBillReprintAdt' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUREP2GUSTBILLREPRNAUDIT'
+
+----- Current guest folio
+delete from prg_menu where module_id='FO' and program_link_id= 'FOQRYCHKOUTGUESTLEDGER'
+go
+update prg_menu set W_LINK = '../reports/fogstfolio' where PROGRAM_LINK_ID = 'FOMNUQUGUSTLEDGER' and w_ind = 1 and MODULE_ID = 'FO'
+go
+
+-----HK Lost & found and Dispose Print
+Insert into PRG_MENU values ('HK','2','1','33','E','HK~2~1~33~E','HK~1~0~1~E','Reprint Lost && Found And Dispose','1','HKTRNREPRINT',Null,'0','1','1','1','Admin ','01/12/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,'5',Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_ind=1, w_link ='../FoPrint/LostAndFound' where program_link_id='HKTRNREPRINT'
+go
+
+-------Provisional Bill
+UPDATE PRG_MENU SET W_LINK='..\TravelAgentBlock\ProvisionalBill' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUCASPPA'
+
+-----Company discount Rate     
+update PRG_MENU set W_LINK='..\FoMstMaster\FoMstCmpyDiscount' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMSTAPPCOMPTARIFF'
+
+-----Guest complaint HK
+UPDATE PRG_MENU set W_LINK='..\Reports\FoAnalyGuestComplain?VMD=HK' where MODULE_ID='HK' and PROGRAM_LINK_ID='HKMNUREPGUSTCS'
+
+------Guest complaint FO
+UPDATE PRG_MENU set W_LINK='..\Reports\FoAnalyGuestComplain' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUQUGUSTCS'
+
+-----Task master
+update prg_menu set W_LINK = '../HKMaster/HkTaskMstr' where MODULE_ID = 'HK' and PROGRAM_LINK_ID = 'HKMNUMSTACTMST'
+
+------Attendent/Suprevisor
+update prg_menu set W_LINK = '../HKMaster/HkAttdSupvsr' where MODULE_ID = 'HK' and PROGRAM_LINK_ID = 'HKMNUMSTCATEMP'
+
+-----Guest settlement
+update PRG_MENU set W_LINK='..\Reports\FoR1GstSettlement' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUREPSETTMOD'
+
+-----Tab Sheet  
+update PRG_MENU set W_LINK='..\Reports\FoR1TaxSheet' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUREPTABSHEET'
+
+--Arrival and departure register  
+update prg_menu set W_LINK = '../reports/foarrvreg' where program_link_id  = 'FOMNUREPARRREG' and module_id = 'FO'
+go
+Delete from prg_menu where module_id='FO' and program_link_id ='FOMNUREP2DEPARTREG'
+go
+Delete from prg_menu_user where module_id='FO' and program_link_id ='FOMNUREP2DEPARTREG'
+go
+
+
+--misc sales analysis
+UPDATE PRG_MENU set W_LINK='..\Reports\FoAnaMiscellSalesAnly?VMD=HK' where MODULE_ID='HK' and PROGRAM_LINK_ID='HKMNUREPMISCSALES'
+go
+UPDATE PRG_MENU set W_LINK='..\Reports\FoAnaMiscellSalesAnly' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUANALMISCSAANAL'
+go
+
+----Applicable Discount
+update PRG_MENU set W_LINK='..\FoMstMaster\FoMstApplicableDiscount',W_IND=1 where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUMSTAPPLDISC'
+
+----Checkout Instruction
+update prg_menu set w_link='..\HKTrans\HKChkoutinst'  where  MODULE_ID='HK' and PROGRAM_LINK_ID='HKMNUCASCHKOUTINSTR'
+
+-----GIA webix
+UPDATE PRG_MENU SET W_IND=1,W_Link='..\TravelAgentBlock\FoInHouseGuest' Where MODULE_ID = 'Fo' and PROGRAM_LINK_ID = 'FOMNUFDGUSTINFOAMEND'
+go
+
+------Collection summary report 
+UPDATE PRG_MENU set W_LINK='..\Reports\FoCollectionSummaryRpt' where MODULE_ID='FO' and PROGRAM_LINK_ID='FONACOLLSUMM'
+
+------Change guest room 
+update prg_menu set w_link='..\TravelAgentBlock\FOChangeRoom' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUFDCHANGEROOM'
+
+------Foreign exchange
+UPDATE PRG_MENU SET W_LINK='..\TravelAgentBlock\FOForeignExchangeMVC' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUCASENCASHCERT'
+
+------ Clear dirty Room
+UPDATE PRG_MENU SET W_LINK='..\TravelAgentBlock\FoClearDirtyRm?MODID=FO' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUFDCLRDROOM'
+
+-----Clear Dirty Room HK
+UPDATE PRG_MENU SET W_LINK='..\TravelAgentBlock\FoClearDirtyRm?MODID=HK' WHERE MODULE_ID='HK' AND PROGRAM_LINK_ID='HKMNUTRNCLDIRTYROOM'
+
+-----HK Room status master
+Insert into PRG_MENU values ('HK      ','2','2','15','E','HK~2~2~15~E    ','HK~1~0~2~E     ','House Keeping Room Status','1','HKMNUMSTHKRMSTS',Null,'1','1','1','1','Admin ','05/25/2004 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update PRG_MENU set W_LINK='..\HKMaster\HKRoomStsMst' ,W_IND='1' where MODULE_ID='HK' and PROGRAM_LINK_ID='HKMNUMSTHKRMSTS'
+go
+
+--FO Flash Report 
+update PRG_MENU set W_LINK='..\Reports\FoPosNightAuditFlashRpt', w_ind = '1' where MODULE_ID='FO' and PROGRAM_LINK_ID='FONAFLASHREPORT'
+go
+
+-----Document template
+INSERT INTO PRG_MENU VALUES ('MT     ','2','2','46','E','MT~2~2~46~E','MT~1~0~2~E','Document Print Template','1','MSTDOCPRTTEMPLT',Null,'1','1','1','1','Admin ','07/08/2023',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\DocumentTemplate',Null,Null)
+GO
+update PRG_MENU set MENU_NM='Doc Print Template' where PROGRAM_LINK_ID='MSTDOCPRTTEMPLT'
+go
+
+-----Document print settings
+INSERT INTO PRG_MENU VALUES ('MT  ','2','2','47','E','MT~2~2~47~E','MT~1~0~2~E','Doc Print Settings','1','MSTDOCPRTSETTS',Null,'1','1','1','1','Admin ','07/08/2023',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MstDocumentPrintSettings',Null,Null)
+GO
+UPDATE PRG_MENU SET NODE_KEY='MT~2~2~48~E ', SEQ_NO='48' WHERE PROGRAM_LINK_ID='MSTEMAILTEMPEDITOR'
+GO
+
+----- Market analysis
+Insert into PRG_MENU values ('FO ','2','11','5','E','FO~2~11~5~E','FO~1~0~11~E','Market Analysis','1','FOMNUREPCONTRIMONTH','              ',Null,Null,Null,1,'Admin ','01/12/2002 00:00:00',1,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+UPDATE PRG_MENU SET W_IND=1,W_Link='..\Reports\FoMarketAnalysis' Where MODULE_ID = 'Fo' and PROGRAM_LINK_ID = 'FOMNUREPCONTRIMONTH'
+go
+
+------Tag room as dirty HK
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoTagRmDirty?MODID=HK' WHERE MODULE_ID='HK' AND PROGRAM_LINK_ID='HKMNUTRNTAGROOMDIRTY'
+GO
+
+---Tag room as dirty FO
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoTagRmDirty?MODID=FO' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOFDSKDIRTYROOM'
+GO
+
+----Block allotment list
+update prg_menu set w_link = '../reports/Foblkaltlist' , w_ind = '1' where module_id = 'FO' and PROGRAM_LINK_ID = 'FOMNUANALTADISCSUMMRE'
+go
+
+----App Module Privileges
+update PRG_MENU set W_LINK='../Master/AppModPrivileg' where MODULE_ID='MT' and PROGRAM_LINK_ID='MTMNUAPPAPPLUSER'
+go
+
+----App Module Menu Privileges
+update PRG_MENU set W_LINK='../Master/AppModMenuPrivil' where MODULE_ID='MT' and PROGRAM_LINK_ID='MTMNUAPPMENUPREV'
+go
+
+-----Master Module Night Audit
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoNightAudit?MODID=MT' WHERE MODULE_ID='MT' AND MENU_LEVEL=2 AND PROGRAM_LINK_ID='MTMNUNA'
+GO
+
+-----Cash transaction report
+update PRG_MENU set W_LINK='..\FOTrans\FoCashTransactionRpt' where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUCASCASHTRN'
+
+-----Package revenue forecast
+Insert into PRG_MENU values ('FO      ','2','11','42','E','FO~2~11~42~E   ','FO~1~0~11~E    ','Package Revenue Forecast','1','FOMNUANALPACKGREVFORECST',Null,'0','0','0','1','Admin ','10/18/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_link = '../reports/FoPkgRevForeCst' , w_ind = '1' where module_id = 'FO' and PROGRAM_LINK_ID = 'FOMNUANALPACKGREVFORECST'
+
+------HK Room status master
+Insert into PRG_MENU values ('HK      ','2','2','15','E','HK~2~2~15~E    ','HK~1~0~2~E     ','House Keeping Room Status','1','HKMNUMSTHKRMSTS',Null,'1','1','1','1','Admin ','05/25/2004 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update PRG_MENU set W_LINK='..\HKMaster\HKRoomStsMst' ,W_IND='1' where MODULE_ID='HK' and PROGRAM_LINK_ID='HKMNUMSTHKRMSTS'
+
+
+-----Guest Search
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoGuestSearch' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUFDGUSTSRCHQRY'
+GO
+
+-----Request/Messages
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoGstMsgReqComp?MODID=FO' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUFDGUSTMCS'
+GO
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoGstMsgReqComp?MODID=HK' WHERE MODULE_ID='HK' AND PROGRAM_LINK_ID='HKMNUTRNGCSM'
+GO
+
+-----Cross Posting Outlet
+Insert into PRG_MENU values ('MT      ','2','10','16','E','MT~2~10~16~E   ','MT~1~0~10~E    ','Cross Posting Outlets','1','MTMNUINTFCRSPSTPROP',Null,Null,'1',Null,Null,'Admin ','07/23/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_link = '../Master/MstCrPostProp' , w_ind = '1' where module_id = 'MT' and PROGRAM_LINK_ID = 'MTMNUINTFCRSPSTPROP'
+go
+
+------Cross Posting Destination
+Insert into PRG_MENU values ('MT      ','2','10','17','E','MT~2~10~17~E   ','MT~1~0~10~E    ','Cross Posting Destination','1','MTMNUINTFCRSPSTPROPREV',Null,Null,'1',Null,Null,'Admin ','07/23/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_link = '../Master/MstDrPrpRev' , w_ind = '1' where module_id = 'MT' and PROGRAM_LINK_ID = 'MTMNUINTFCRSPSTPROPREV'
+go
+
+------Checkout
+UPDATE PRG_MENU SET W_LINK ='/TravelAgentBlock/FoCheckoutNew' WHERE PROGRAM_LINK_ID = 'FOMNUCASCHKOUT' AND MODULE_ID ='FO'
+GO
+
+----- Bill settlement/Cancel
+UPDATE PRG_MENU SET W_LINK ='/TravelAgentBlock/FOBillSettlement?MODE=S' WHERE PROGRAM_LINK_ID = 'FOMNUCASBILLSETT' AND MODULE_ID ='FO'
+GO
+
+-----Bill resettlement
+UPDATE PRG_MENU SET W_LINK ='/TravelAgentBlock/FOBillSettlement?MODE=R' WHERE PROGRAM_LINK_ID = 'FOMNUCASCANCSETTPENDBILL' AND MODULE_ID ='FO'
+GO
+
+-----Guest visit/ Revenue link
+Insert into PRG_MENU values ('FO      ','2','7','56','E','FO~2~7~56~E    ','FO~1~0~7~E     ','Guest visit / Revenue Link','1','FOMNUMSTGSTREVLINK',Null,'1','1','1','1','Admin ','01/18/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update PRG_MENU set W_IND='1',W_LINK='..\FoMstMaster\FoMstGuestVisitRevLink'  where MODULE_ID='FO' and PROGRAM_LINK_ID='FOMNUMSTGSTREVLINK'
+GO
+
+-----Guest charge transfer
+UPDATE PRG_MENU SET W_LINK='..\TravelAgentBlock\FoGstChrTrnsferNew' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUCASPOSTCHRGAMND'
+GO
+
+
+-------Cashier transaction list
+update PRG_MENU set W_LINK='..\FOTrans\FoCashTrasactCollectionRpt' where MODULE_ID='FO' and PROGRAM_LINK_ID='FONACSHTRNLST'
+Go
+
+------Link Delink room
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoLnkDLinkRm' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUFDLDROOM'
+GO
+
+------Revenue multi property
+Insert into PRG_MENU values ('MT     ','2','16','10','E','MT~2~16~10~E  ','MT~1~0~16~E   ','Revenue Multi Property','1','MTMNUREVMULPRP',Null,'0','1','0','0','Admin ','07/12/2017 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND = '1' ,W_LINK = '../Master/MstRevenueMultiProperty' WHERE PROGRAM_LINK_ID = 'MTMNUREVMULPRP' AND MODULE_ID = 'MT'
+GO
+
+
+-----Four month projection
+Insert into PRG_MENU values ('FO    ','2','11','67','E','FO~2~11~67~E ','FO~1~0~11~E  ','Four Months Projection','1','FOMNUANAFOURMNTHPROJ',Null,'0','0','0','1','Admin ','05/13/2008 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update PRG_MENU set W_LINK = '../reports/FoDateWiseAnal', w_ind = '1' where MODULE_ID = 'FO' and PROGRAM_LINK_ID = 'FOMNUANAFOURMNTHPROJ'
+go
+
+
+--------Reinstate checkout
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\TravelAgentBlock\FoReInstateChkOut' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUFDRECHK'
+GO
+
+-------BIR
+ update prg_menu set menu_nm='BIR' where module_id='mt' and program_link_id='MTMNUPHILIPP'
+
+
+------OR register report
+Insert into PRG_MENU values ('MT      ','2','20','6','E','MT~2~20~6~E    ','MT~1~0~20~E    ','System GenOR Register','1','MTRPTPURSYSORREGI',Null,'0','0','0','1','Admin ','05/02/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\SystemGenORRegister',Null,Null)
+GO
+update PRG_MENU set w_link='..\MstReports\SystemGenORRegister' where  PROGRAM_LINK_ID='MTRPTPURSYSORREGI'
+
+-------Bill settings
+Insert into PRG_MENU values ('MT      ','2','20','3','E','MT~2~20~3~E    ','MT~1~0~20~E    ','Bill Settings','1','MTBIRBILLSETTS',Null,'0','0','0','1','Admin ','04/09/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MSTBIRbillSettings',Null,Null)
+GO
+update PRG_MENU set menu_nm='Bill Settings' where PROGRAM_LINK_ID='MTBIRBILLSETTS'
+
+
+-------Number series
+Insert into PRG_MENU values ('MT      ','2','20','2','E','MT~2~20~2~E    ','MT~1~0~20~E    ','Number Series','1','MTBIRNYMBSERS',Null,'0','0','0','1','Admin ','04/09/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MstBIRNumberSeries',Null,Null)
+GO
+update PRG_MENU set menu_nm='Number Series' where PROGRAM_LINK_ID='MTBIRNYMBSERS'
+
+
+----- Multi property Company Link
+Insert into PRG_MENU values ('MT     ','2','16','11','E','MT~2~16~11~E  ','MT~1~0~16~E   ','Company Multi Property','1','MTMNUCMPPROFMULPRP',Null,'0','1','0','0','Admin ','07/12/2017 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND = '1' ,W_LINK = '../Master/MstCompanyMultiProperty' WHERE PROGRAM_LINK_ID = 'MTMNUCMPPROFMULPRP' AND MODULE_ID = 'MT'
+GO
+
+
+----Flash report
+update PRG_MENU set W_LINK='..\Reports\FoPosNightAuditFlashRpt' where MODULE_ID='FO' and  PROGRAM_LINK_ID='FONAFLASHREPORT'
+
+--Room blocking 
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../TravelAgentBlock/FORoomBlocking' WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUFDROOMBLK'
+GO
+
+----Erase checkin
+UPDATE PRG_MENU SET W_LINK ='..\TravelAgentBlock\FoEraseChkin?MODID=FO' WHERE module_id='fo' and PROGRAM_LINK_ID='FOMNUFDERASECHKIN'
+GO
+
+----Guest Inhouse report
+update prg_menu set W_LINK='..\Reports\FoGuestInHouse'  where PROGRAM_LINK_ID='FOMNUQU2GUSTINHOSE'
+go
+
+
+---Room Blocking HK
+update prg_menu set w_ind=1,w_link='../TravelAgentBlock/FORoomBlocking?MODID=HK' where module_id='HK' and program_link_id='HKMNUTRNROOMBLK'
+go
+
+
+
+
+
+
