@@ -1,0 +1,127 @@
+------20/12/2022-----Consolidate Po 
+--------------------------------------------------------------------------------
+
+Insert into PRG_MENU values ('PUV2    ','2','1','38','E','PUV2~2~1~38~E  ','PUV2~1~0~1~E   ','Consolidated PO','1','PUV2NUTRNCONSLDTPO',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\Purchaseorder?FnType=ConsolidatedPO',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','40','E','PUV2~2~1~40~E  ','PUV2~1~0~1~E   ','Create Porperty PO','1','PUV2NUTRNPOCRETPROPY',Null,'1','1','1','1','Admin ','12/07/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/CreatePropPo',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='../PurchaseCtrl/CreatePropPo', menu_nm='Create Property PO' WHERE module_id='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPOCRETPROPY'
+go
+
+UPDATE PRG_MENU SET W_LINK='../PurchaseCtrl/CreatePropPo' WHERE module_id='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPOCRETPROPY'
+go
+
+Insert into PRG_MENU values ('PUV2    ','2','4','34','E','PUV2~2~4~32~E  ','PUV2~1~0~4~E   ','Consolidate Po Status','1','PUV2NURECONSLDPOSTS',Null,'0','0','0','1','Admin ','12/09/2022 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','.../PurchaseReports/poConsolidatePoStatus',Null,Null)
+GO
+
+update PRG_MENU set W_LINK = '/PurchaseReports/poConsolidatePoStatus' WHERE PROGRAM_LINK_ID = 'PUV2NURECONSLDPOSTS' AND MODULE_ID = 'PUV2'
+go
+
+UPDATE PRG_MENU SET MENU_NM = 'Consolidated Po Status' WHERE PROGRAM_LINK_ID = 'PUV2NURECONSLDPOSTS' AND MODULE_ID = 'PUV2'
+go
+
+update prg_menu set w_link='..\PurchaseReports\ItemWisePRStatusRpt' where module_id='puv2' and program_link_id='PUV2NUREPPUPRODPUSTREP'
+go
+
+
+
+
+----BAR STOCK
+-----------------------------
+
+---trans
+Insert into PRG_MENU values ('INV2','2','1','43','E','INV2~2~1~43~E  ','INV2~1~0~1~E   ','POS Posting','1','INTRNSTRNPOSISSPTING',Null,'1','1','1','1','Admin ','06/12/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialCtrl/PassIssuePosting',Null,Null)
+GO
+
+---master
+Insert into PRG_MENU values ('INV2    ','2','2','82','E','INV2~2~2~82~E  ','INV2~1~0~2~E   ','POS IssuePosting ','1','INMSTSTPOSISSUE',Null,'1','1','1','1','Admin ','01/24/2022 10:20:25',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPPosIssuePosting',Null,Null)
+GO
+
+Update PRG_MENU set W_IND='1' ,W_LINK ='..\MaterialMstWeb\POSPostSettings' ,MENU_NM='POS Post Settings' where PROGRAM_LINK_ID='INMSTSTPOSISSUE'
+
+
+----------inv2 master (ROYALRAWL)
+------------------------------------------------------------
+
+Insert into PRG_MENU values ('INV2    ','2','2','83','E','INV2~2~2~83~E  ','INV2~1~0~2~E   ','PO Type','1','INV2NUMSTPOTYPE',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoType',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\MaterialMstWeb\MstPoType' WHERE MODULE_ID='INV2' AND  PROGRAM_LINK_ID = 'INV2NUMSTPOTYPE' 
+go
+
+Insert into PRG_MENU values ('INV2    ','2','2','84','E','INV2~2~2~84~E  ','INV2~1~0~2~E   ','Applicable Tax','1','INV2NUMSTAPPLTAX',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstApplicableTax',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\MaterialMstWeb\MstApplicableTax' WHERE MODULE_ID='INV2' AND  PROGRAM_LINK_ID = 'INV2NUMSTAPPLTAX' 
+go
+
+Insert into PRG_MENU values ('INV2    ','2','2','85','E','INV2~2~2~85~E  ','INV2~1~0~2~E   ','Tax','1','INV2NUMSTTAX',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoTax',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\MaterialMstWeb\MstPoTax' WHERE MODULE_ID='INV2' AND  PROGRAM_LINK_ID = 'INV2NUMSTTAX' 
+go
+
+Insert into PRG_MENU values ('INV2    ','2','2','86','E','INV2~2~2~86~E  ','INV2~1~0~2~E   ','Target Tax Structure','1','INV2NUMSTTARGETTAXSTRUC',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstTargetTaxStructure',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\MaterialMstWeb\MstTargetTaxStructure' WHERE MODULE_ID='INV2' AND  PROGRAM_LINK_ID = 'INV2NUMSTTARGETTAXSTRUC'
+go
+
+
+-------PO EMAIL ----------(15/03/23)
+---------------------------------------------
+
+Insert into PRG_MENU values ('PUV2    ','2','2','38','E','PUV2~2~9~38~E  ','PUV2~1~0~2~E   ','Email Settings','1','PUV2NUMSTEMLSETTS',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/EmailSettings',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','36','E','PUV2~2~9~36~E  ','PUV2~1~0~2~E   ','Email Template','1','PUV2NUMSTEMLTEMPLT',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MPEmailTemplate',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2   ','2','2','42','E','PUV2~2~9~42~E ','PUV2~1~0~2~E  ','PO Email','1','PUV2MSTPOMAIL',Null,'1','1','1','1','Admin ','01/10/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstPoEmail',Null,Null)
+GO
+
+UPDATE PRG_MENU SET MENU_LEVEL='2',PARENT_SEQ_NO='1',SEQ_NO='27',NODE_KEY='PUV2~2~1~27~E',PARENT_KEY='PUV2~1~0~1~E' WHERE PROGRAM_LINK_ID='PUV2MSTPOMAIL'
+go
+
+
+
+
+----------------------------------------------29/09/23
+
+
+---------Quote Request
+
+Insert into PRG_MENU values ('PUV2','2','1','42','E','PUV2~2~1~42~E ','PUV2~1~0~1~E   ','Quote Request','1','PUV2NUTRNPOREQFRQUTE',Null,'1','1','1','1','Admin ','04/08/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/RequesttForQuote',Null,Null)
+GO
+
+-----------Quote Vendor
+
+Insert into PRG_MENU values ('PUV2','2','1','44','E','PUV2~2~1~44~E ','PUV2~1~0~1~E   ','Quote Vendor','1','PUV2NUTRNPOQUTEVEN',Null,'1','1','1','1','Admin ','12/09/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/VendorQuote',Null,Null)
+GO
+
+------Quote Score
+
+Insert into PRG_MENU values ('PUV2','2','1','46','E','PUV2~2~1~46~E ','PUV2~1~0~1~E   ','Quote Score','1','PUV2NUTRNPOQUTEVENSCORE',Null,'1','1','1','1','Admin ','12/09/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/VendorQuote?Typ=R',Null,Null)
+GO
+
+------Quote Approval
+
+Insert into PRG_MENU values ('PUV2','2','1','48','E','PUV2~2~1~48~E ','PUV2~1~0~1~E   ','Quote Approval','1','PUV2NUTRNPOQUTEVENAPPR',Null,'1','1','1','1','Admin ','12/09/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/VendorQuote?Typ=A',Null,Null)
+GO
+
+update PRG_MENU set W_LINK='../PurchaseCtrl/QuoteTabularApproval' WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPOQUTEVENAPPR'
+
+----RFQ Mail
+
+Insert into PRG_MENU values ('PUV2','2','1','50','E','PUV2~2~1~50~E ','PUV2~1~0~1~E   ','Quote Request Mail','1','PUV2NUTRQTERFQMAIL',Null,'1','1','1','1','Admin ','2023/09/20 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MSTQuotationEmail',Null,Null)
+GO
+
+----Score Template
+
+Insert into PRG_MENU values ('PUV2','2','2','40','E','PUV2~2~9~40~E ','PUV2~1~0~2~E  ','Score Template','1','PUV2NUMSTSCRETEMP',Null,'1','1','1','1','Admin ','08/21/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstScoreTemplate',Null,Null)
+GO
+
+
+

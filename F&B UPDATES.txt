@@ -1,0 +1,127 @@
+----ingredient creation and recipe creation(23/3/23)
+---------------------------------------------------------------------
+
+UPDATE PRG_MENU SET W_LINK = '/FandB/FandBHome#/FBMNUTRNRC' ,W_IND = '1' where PROGRAM_LINK_ID = 'FBMNUTRNRC'
+go
+
+UPDATE PRG_MENU SET W_LINK = '/FandB/FandBHome#/FBMNUTRNIC' , W_IND = '1' WHERE MODULE_ID = 'FB' AND PROGRAM_LINK_ID = 'FBMNUTRNIC'
+go
+
+
+----------01/08/2023
+
+---------------------Ingredientmaster
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstIngredientMstr' WHERE PROGRAM_LINK_ID ='FBMNUMSTINGMST'
+go
+
+---------------------------------costcenter link to material cost ceneter
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\MstCostCntrLnkToMtrilCostCnt' WHERE PROGRAM_LINK_ID ='FBMNUCCMATCCLINK'
+go
+
+---------------------------------f&b CostCenter
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstCostCenter' WHERE PROGRAM_LINK_ID ='FBMNUCCCOSTCENTER'
+go
+
+---------------------------------F&B Settings
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../FBMaster/FBMstFBSetting' WHERE PROGRAM_LINK_ID ='FBMNUMSTFBSETT'
+go
+
+---------------------------------f&b Outlet
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstOutlet' WHERE PROGRAM_LINK_ID ='FBMNUCCOUTLET'
+go
+
+---------------------------------FBMstProductCategory
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstProductCategory' WHERE PROGRAM_LINK_ID ='FBMNUCCPRODCAT'
+GO
+
+---------------------------------FBApplicapleStores
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstApplicapleStores' WHERE PROGRAM_LINK_ID ='FBMNUAPPLPRODSTORE'
+GO 
+
+update PRG_MENU set new_ind ='0' where MODULE_ID = 'FB' and PROGRAM_LINK_ID ='FBMNUAPPLPRODSTORE'
+go
+
+---------------------Applicable for InterDepartment Transfer------------------
+update PRG_MENU set W_LINK='../FBMaster/FBMatAppInterDeptransfer' where  PROGRAM_LINK_ID='FBMNUTRNIDT'
+GO
+-------------------------Food Cost Outlet Link to Sale Outlet---------------------
+update PRG_MENU set W_LINK='../FBMaster/FBMstFoodCostandSaleOutlet' where  PROGRAM_LINK_ID='FBMNUCCCOSTOUTSALLINK'
+GO
+---------------------- Cost Centre link To Product Sub Group-------------------------
+update PRG_MENU set W_LINK='../FBMaster/MstCostCntrLnkToProdSubGrp' where  PROGRAM_LINK_ID='FBMNUPRODSUBCATLINK'
+GO
+----------------Sale Product Group link To Purchase Product Group-----------------
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstSaleProdToPurProGrp' WHERE PROGRAM_LINK_ID ='FBMNUCCSALEPURLINK'
+GO
+-----------------Cost Center Link To Outlet-------------------------
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstCostCntrLnkToOutlet' WHERE PROGRAM_LINK_ID ='FBMNUCSTCNTLKOT'
+GO
+------------------------------Recipe Category---------------------
+update PRG_MENU set W_LINK='../FBMaster/FBMstRecCat' where  PROGRAM_LINK_ID='FBMNURECCAT'
+GO
+------------------------------Recipe Type---------------------
+update PRG_MENU set W_LINK='../FBMaster/FBMstRecTyp' where  PROGRAM_LINK_ID='FBMNURECTYPE'
+GO
+-----------------------Costing Group Link To Material product group-------------------------
+update PRG_MENU set W_LINK='../FBMaster/FBMstCostLnkToMtrilcGrp' where  PROGRAM_LINK_ID='FBMNUCSTGRP'
+GO
+----------------Recipe consumption applicable store / outlet ----------------------
+update PRG_MENU set W_LINK='../FBMaster/FBMstRecAppliStr' where  PROGRAM_LINK_ID='FBMNUAPPLRECSTR'
+go
+
+----------------------Product Category Link To Purchase Prod Group & Sub Group-----------------
+update PRG_MENU set W_LINK='../FBMaster/FBMstProdCLnkToPurProdGrp' where  PROGRAM_LINK_ID='FBMNUPRODCATLINK'
+go
+
+update PRG_MENU set new_ind ='1' where MODULE_ID = 'FB' and PROGRAM_LINK_ID ='FBMNUPRODCATLINK'
+go
+
+
+--------------Non Commercial consumption:
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\FBMstNonComcalCunsmsnNCC' WHERE PROGRAM_LINK_ID ='FBMNUCCNC'
+GO
+----------- NCCLinkToNCKOTType:
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\FBMaster\NCCLinkToNCKOTType' WHERE PROGRAM_LINK_ID ='FBMNUCCNCCLINK'
+GO
+
+-------Consumption Based Costing-Daily
+
+Insert into PRG_MENU values ('FB     ','2','4','1','E','FB~2~4~1~E    ','FB~1~0~4~E    ','Consumption Based Costing - Daily','1','FBMNUCCDCOSTREP',Null,'0','0','0','1','Admin ','06/09/2003 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\FB\FBCsConsumptnBsdCostMonly.aspx',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\FandBReports\FBRptConsumptionBasedCost'where MODULE_ID='FB' and PROGRAM_LINK_ID='FBMNUCCDCOSTREP' AND W_IND=1
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../FBMaster/FBMstSalesPosting' WHERE PROGRAM_LINK_ID ='FBMNUCCSALESPOST'
+go
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../FBMaster/FBMstMaterialissuePosting' WHERE PROGRAM_LINK_ID ='FBMNUCCMATISSPOST'
+go
+
+-------------------SalesPosting
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../FBMaster/FBMstSalesPosting' WHERE PROGRAM_LINK_ID ='FBMNUCCSALESPOST'
+go
+
+---------------MaterialissuePosting
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../FBMaster/FBMstMaterialissuePosting' WHERE PROGRAM_LINK_ID ='FBMNUCCMATISSPOST'
+go
+
+-----Recipe Costing
+Insert into PRG_MENU values ('FB      ','2','3','1','E','FB~2~3~1~E     ','FB~1~0~3~E     ','Recipe Costing','1','FBMNUREPRL',Null,'0','0','0','1','Admin ','07/27/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\FB\FBRptRecipeCosting.aspx',Null,Null)
+
+GO
+
+
+update PRG_MENU set W_LINK='../FandBReports/FBRptRecipeCost?TRN=RC' where  PROGRAM_LINK_ID='FBMNUREPRL'
+go
+
+--------------Recipe List
+Insert into PRG_MENU values ('FB      ','2','3','4','E','FB~2~3~4~E     ','FB~1~0~3~E     ','Recipe List','1','FBMNUREPRLST',
+Null,'0','0','0','1','Admin ','07/27/2002 00:00:00','1',
+Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'../FandBReports/FBRptRecipeCost?Trn=RL',Null,Null)
+go
+
+
+update PRG_MENU set new_ind ='1' where MODULE_ID = 'FB' and PROGRAM_LINK_ID ='FBMNUPRODCATLINK'
+go
+
+update PRG_MENU set new_ind ='0' where MODULE_ID = 'FB' and PROGRAM_LINK_ID ='FBMNUAPPLPRODSTORE'
+go

@@ -1,0 +1,779 @@
+
+Insert into PRG_MODULE values ('HMS     ','INV2 ','E','New Material Management','key 131','New Material','5','1','T','suresh','05/02/2005 11:13:17', 'Material ','MAT')
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','1','E','INV2~1~0~1~E   ','MENU           ','Transaction','1','INTRN',Null,Null,Null,Null,Null,'Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','2','E','INV2~1~0~2~E   ','MENU           ','Masters','1','INMST',Null,Null,Null,Null,Null,'Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','3','E','INV2~1~0~3~E   ','MENU           ','Reports','1','INREP',Null,Null,Null,Null,Null,'Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','4','E','INV2~1~0~4~E   ','MENU           ','Queries','1','INMNUQU',Null,Null,Null,Null,Null,'Admin ','07/29/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','5','E','INV2~1~0~5~E   ','MENU           ','Help','1','INHLP',Null,Null,Null,Null,Null,'Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','6','E','INV2~1~0~6~E   ','MENU           ','Favorites','1','INMNUFAV',Null,Null,Null,Null,Null,'Admin ','07/29/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','7','E','INV2~1~0~7~E   ','MENU           ','Analysis','1','INMNUANAL',Null,Null,Null,Null,Null,'Admin ','11/07/2003 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','1','0','8','E','INV2~1~0~8~E   ','MENU           ','Settings','1','INSETT',Null,Null,Null,Null,Null,'Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+                                          
+                                                                                                                -------INV2  Transaction------
+                                                                     ------------------------------------------------------------------------------------------------------------------
+
+Insert into PRG_MENU values ('INV2    ','2','1','1','E','INV2~2~1~1~E   ','INV2~1~0~1~E   ','Material Request','1','INTRNINDENT',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,'1','1','1',Null,Null,Null,Null,Null,'1','../MaterialCtrl/MaterialREQ?Type=MR',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','2','E','INV2~2~1~2~E   ','INV2~1~0~1~E   ','MR - Reprint','1','INTRNMATREQREPRN',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,'1',Null,Null,Null,Null,Null,Null,Null,'1','../MaterialCtrl/MRReprint',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','4','E','INV2~2~1~4~E   ','INV2~1~0~1~E   ','MR Short Close','1','INTRNMATREGSHRTCL',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialCtrl/MaterialREQ?Type=SC',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','9','E','IN~2~1~9~E     ','INV2~1~0~1~E   ','Approval','1','INTRNAPPROVAL',Null,'1','1','1','1','Admin ','05/31/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','1','..\PurchaseCtrl\MainApprovalSel?MENUTYPE=MATERIAL',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','18','E','INV2~2~1~18~E  ','INV2~1~0~1~E   ','Material Receipt','1','INTRNMATRECPT',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialCtrl\MaterialReceipt?Menu=RECEIVING',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','22','E','INV2~2~1~22~E  ','INV2~1~0~1~E   ','Receipt Return','1','INTRNRECPTRETN',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialCtrl\MaterialReceipt?Menu=ReciptReturn',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','23','E','IN~2~1~4~E     ','INV2~1~0~1~E   ','MR - Cancel','1','INTRNMATREGCNL',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialCtrl/MaterialREQ?Type=C',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','30','E','INV2~2~1~30~E  ','INV2~1~0~1~E   ','Material Issue','1','INTRNMATISSUE',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialCtrl\MaterialIssue',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','36','E','INV2~2~1~36~E  ','INV2~1~0~1~E   ','Stock Reconciliation','1','INTRNPHYINVRECON',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialCtrl\MaterialReconcillation',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','44','E','INV2~2~1~44~E  ','INV2~1~0~1~E   ','Store Month Closure','1','INTRNSTRMNTHCLOSE',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialCtrl/StoreMnthClose',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','48','E','INV2~2~1~48~E  ','INV2~1~0~1~E   ',' Opening Stock','1','INTRNSTRSTROPSTK',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialCtrl\OpeningStock',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','1','80','E','INV2~2~1~80~E  ','INV2~1~0~1~E   ','Material Receipt Note','1','INV2REPMATRECPTNOTE',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialCtrl/MatReceiptPrint',Null,Null)
+GO
+
+                                                                        ----------INV2--Masters---------- 
+                          ----------------------------------------------------------------------------------------------------------------------
+Insert into PRG_MENU values ('INV2    ','2','2','5','E','INV2~2~2~5~E   ','INV2~1~0~2~E   ','CC Store Product Group','1','INMSTSTRPRODGRP',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTApplicableStoreProductGroup',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','6','E','INV2~2~2~6~E   ','INV2~1~0~2~E   ','CC Store','1','INMSTSTR',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTMaterialStoreTypeMst',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','8','E','INV2~2~2~8~E   ','INV2~1~0~2~E   ','Parent Cost Center','1','INV2MNUMSTPRCC',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTParentCostCenter',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','13','E','INV2~2~2~13~E  ','INV2~1~0~2~E   ','Settings','1','INMNUMSTSTRSETT',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTSettings',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','15','E','INV2~2~2~15~E  ','INV2~1~0~2~E   ','CC Store User','1','INMNUMSTAPPLSTR',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTApplicableCCStore',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','25','E','INV2~2~2~25~E  ','INV2~1~0~2~E   ','Approval Settings','1','INMSTSTRAPPLSETT',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTApprovalSettings',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','28','E','INV2~2~2~28~E  ','INV2~1~0~2~E   ','Approval Authority','1','INMSTSTRAPPLAUTHRTY',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTApprovalAuthority',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','37','E','INV2~2~2~37~E  ','INV2~1~0~2~E   ','Reorder Level','1','INTRNREORDERLEVEL',Null,'1','1','1','1','Admin ','05/07/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTReorderLevel',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','65','E','INV2~2~2~65~E  ','INV2~1~0~2~E   ','CC Store Group','1','INMSTSTRGRP',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTStoreGroup',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','2','81','E','INV2~2~2~81~E  ','INV2~1~0~2~E   ','Reorder Group','1','INMSTREORDGRP',Null,'1','1','1','1','Admin ','01/24/2022 10:20:25',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\MPMSTReOrderGroup',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2     ','2','2','45','E','INV2~2~2~45~E    ','INV2~1~0~2~E     ','Set Average Rate for Items','1','INMSTSTAVGRTFRITMS',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'../MaterialCtrl/MatSetAvgRateItem',Null,Null)
+GO
+                                                                        -------INV2  Reports----
+                   -------------------------------------------------------------------------------------------------------------------------------
+---05/08/2022
+Insert into PRG_MENU values ('INV2    ','2','3','3','E','INV2~2~3~3~E   ','INV2~1~0~3~E   ','Material Issue Note','1','INREPMATISSNOTE',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialCtrl\MatIssuePrint',Null,Null)
+GO
+
+---11/04/2022
+Insert into PRG_MENU values ('INV2    ','2','3','5','E','INV2~2~3~5~E   ','INV2~1~0~3~E   ','Receipt List','1','INREPRECPTISSLIST',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\RecepiteList',Null,Null)
+GO
+
+---22/04/2022
+Insert into PRG_MENU values ('INV2    ','2','3','6','E','INV2~2~3~6~E   ','INV2~1~0~3~E   ','Issue List','1','INREPISSUELIST',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\IssueList',Null,Null)
+GO
+
+
+--04/03/2022
+Insert into PRG_MENU values ('INV2    ','2','3','12','E','INV2~2~3~12~E  ','INV2~1~0~3~E   ','Stock Summary','1','INREPSTKSUMM',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\StockSummery',Null,Null)
+GO
+
+---14/03/2022
+Insert into PRG_MENU values ('INV2    ','2','3','13','E','INV2~2~3~13~E  ','INV2~1~0~3~E   ','Stock Ledger Summary','1','INREPSTKLEDSUMM',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\StockLedgerSummary',Null,Null)
+GO
+
+---09/03/2022
+Insert into PRG_MENU values ('INV2    ','2','3','15','E','INV2~2~3~15~E  ','INV2~1~0~3~E   ','Stock Item Ledger','1','INREPITMWISLEDSUMM',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\ItemStockLedger',Null,Null)
+GO
+
+----28/05/2022
+Insert into PRG_MENU values ('INV2    ','2','3','40','E','INV2~2~3~40~E  ','INV2~1~0~3~E   ','MR Status Report','1','INREPMTRQST',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\MaterialRequestStatusReport',Null,Null)
+GO
+
+----17/05/2022
+Insert into PRG_MENU values ('INV2    ','2','3','81','E','INV2~2~1~81~E  ','INV2~1~0~3~E   ','Receipt Note Summary','1','INV2REPRECNTSUMMY',Null,'1','1','1','1','Admin ','07/27/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialReports/RecevingNoteSummary',Null,Null)
+GO
+
+
+
+
+                                                      -------INV2  Queries -----------
+                   -----------------------------------------------------------------------------------------------------------------------------------------
+--05/07/2022
+Insert into PRG_MENU values ('INV2    ','2','4','82','E','INV2~2~1~82~E  ','INV2~1~0~4~E   ','Item Stored Query','1','INV2REPITMSRDQRY',Null,'1','1','1','1','Admin ','07/27/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialQueries/ItemStoredQuery',Null,Null)
+GO
+
+
+---09/07/2022
+
+Insert into PRG_MENU values ('INV2','2','4','83','E','INV2~2~1~83~E  ','INV2~1~0~4~E   ','Item Consumption','1','INV2REPITEMCOSMSUMMY',Null,'1','1','1','1','Admin ','07/27/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialQueries/ItemConsumptionSummary',Null,Null)
+GO
+                                                    --------INV2  Analysis ------
+  ------------------------------------------------------------------------------------------------------------------------------
+
+Insert into PRG_MENU values ('INV2    ','2','7','1','E','INV2~2~7~1~E   ','INV2~1~0~7~E   ','Receipt Analysis','1','INREPRIANALYSIS',Null,'0','0','0','1','Admin ','07/22/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialAnalysis\ReceiptAnaysis',Null,Null)
+GO
+
+--16/04/2022
+Insert into PRG_MENU values ('INV2    ','2','7','2','E','INV2~2~7~2~E   ','INV2~1~0~7~E   ','Issue Analysis','1','INREPISSUEANALYSIS',Null,'0','0','0','1','Admin ','07/22/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialAnalysis\IssueAnalysis',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','7','5','E','INV2~2~7~5~E   ','INV2~1~0~7~E   ','Dept Item Summary','1','INREPDEPTITEMCONSSUMM',Null,'0','0','0','1','Admin ','07/22/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\DepartmentItemConsumptionSummary',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','7','6','E','INV2~2~7~6~E   ','INV2~1~0~7~E   ','CC Item Summary','1','INREPCOSTCONSSUMM',Null,'0','0','0','1','Admin ','07/22/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\CostCenterwiseItemConsumptionSummary',Null,Null)
+GO
+
+----27/06/2022	
+Insert into PRG_MENU values ('INV2    ','2','4','11','E','INV2~2~1~11~E  ','INV2~1~0~4~E   ','Store Summary','1','INV2REPSTRSUMM',Null,'1','1','1','1','Admin ','07/27/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialQueries/StoreSummary',Null,Null)
+GO
+
+
+Insert into PRG_MENU values ('INV2    ','2','7','7','E','INV2~2~7~7~E   ','INV2~1~0~7~E   ','CC Summary','1','INREPDEPTCONSSUMM',Null,'0','0','0','1','Admin ','07/22/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialAnalysis\CostCenterConsumptionSummary',Null,Null)
+GO
+
+INSERT [DBO].PRG_MENU VALUES('INV2',2,7,8,'E','INV2~2~7~8~E','INV2~1~0~7~E','CC Item Month wise',1,'INREPDEPTICONSSUMM',NULL,0,0,0,1,'Admin',GETDATE(),1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'..\MaterialAnalysis\ItemConsumptionSummary',NULL,NULL)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','7','9','E','INV2~2~7~9~E  ','INV2~1~0~7~E   ','ABC Consumption','1','INV2RPTABCOSUMALYS',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialAnalysis/ABConsumptionAnalysis',Null,Null)
+GO
+
+Insert into PRG_MENU values ('INV2    ','2','7','10','E','INV2~2~7~10~E  ','INV2~1~0~7~E   ','XYZ Consumption','1','INV2RPTXYZCOSUMALYS',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialAnalysis/XYZConsumptionAnalysis',Null,Null)
+GO
+
+----14/07/2022
+Insert into PRG_MENU values ('INV2    ','2','7','89','E','INV2~2~1~89~E  ','INV2~1~0~7~E   ','High Value Stock','1','INV2REPGIHVLUSTKITM',Null,'1','1','1','1','Admin ','07/27/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialReports/HighValueStockItem',Null,Null)
+GO
+
+---02/10/2022
+Insert into PRG_MENU values ('INV2    ','2','7','90','E','INV2~2~1~90~E  ','INV2~1~0~7~E   ','Non Moving List','1','INV2INMNUANALNONMOING',Null,'1','1','1','1','Admin ','09/07/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialAnalysis/NonMovingList',Null,Null)
+GO
+
+                                                                          ---------PURCHASE  V2 -------
+        ----------------------------------------------------------------------------------------------------------------
+Insert into PRG_MODULE values ('HMS     ','PUV2','E','NEW Purchase','key 133','NEW Purchase       ','4','1','U','ADMIN ','09/29/2004 17:13:52','NEW Purchase','NPU2')
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','1','E','PUV2~1~0~1~E   ','MENU           ','Transactions','1','PUV2NUTRN',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','2','E','PUV2~1~0~2~E   ','MENU           ','Masters','1','PUV2NUMST',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','3','E','PUV2~1~0~3~E   ','MENU           ','Queries','1','PUV2NUQU',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','4','E','PUV2~1~0~4~E   ','MENU           ','Reports','1','PUV2NUREP',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2','1','0','9','E','PUV2~1~0~9~E','MENU','Analysis','1','PUV2NUANAL',Null,Null,Null,Null,Null,'Admin ','10/13/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','5','E','PUV2~1~0~5~E   ','MENU           ','Tools','1','PUV2NUTLS',Null,Null,Null,Null,'1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','6','E','PUV2~1~0~6~E   ','MENU           ','Favorites','1','PUV2NUFAV',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','7','E','PUV2~1~0~7~E   ','MENU           ','Help','1','PUV2NUHLP',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','1','0','8','E','PUV2~1~0~8~E   ','MENU           ','Auto PO','1','PUV2NUAUTOPO',Null,Null,Null,Null,Null,'Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+                                                         ------PUV2  Transaction---
+---------------------------------------------------------------------------------------------------------------------------
+
+Insert into PRG_MENU values ('PUV2    ','2','1','1','E','PUV2~2~1~1~E   ','PUV2~1~0~1~E   ','Purchase Requisition','1','PUV2NUTRNPUINDENT',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\PurchaseRequisiton',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','5','E','PUV2~2~1~5~E   ','PUV2~1~0~1~E   ','PR Reprint','1','PUV2NUTRNINDENTREPRN',Null,Null,Null,Null,'1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/PRReprint',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','6','E','PUV2~2~1~6~E   ','PUV2~1~0~1~E   ','Approval','1','PUV2MNUTRNAPPROVAL',Null,'1','1','1','1','Admin ','05/25/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\MainApprovalSel?MENUTYPE=PURCHASE',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','9','E','PUV2~2~1~9~E   ','PUV2~1~0~1~E   ','PR Short Close ','1','PUV2NUTRNPUINDENTSHRTCL',Null,'0','1','0','0','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/PurchaseRequisiton?FnType=ShortClose',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','10','E','PUV2~2~1~10~E  ','PUV2~1~0~1~E   ','PR Cancel ','1','PUV2NUTRNCANPUORD',Null,Null,'1',Null,'1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\PurchaseRequisiton?FnType=Cancel',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','12','E','PUV2~2~1~12~E     ','PUV2~1~0~1~E   ','PR Reorder ','1','PUV2NUTRNREORD',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/PurchaseRequisiton?FnType=Reorder',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','20','E','PUV2~2~1~20~E  ','PUV2~1~0~1~E   ','Purchase Order','1','PUV2NUTRNPO',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\Purchaseorder',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','25','E','PUV2~2~1~25~E  ','PUV2~1~0~1~E   ','PO Reprint','1','PUV2NUTRNPOREPRN',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00',Null,Null,NULL,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/PurOrderReprint',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','32','E','PUV2~2~1~32~E  ','PUV2~1~0~1~E   ','PO Short Close ','1','PUV2NUTRNPOINDENTSHRTCL',Null,'0','1','0','0','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/Purchaseorder?FnType=ShortClose',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','34','E','PUV2~2~1~34~E  ','PUV2~1~0~1~E   ','PO Cancel ','1','PUV2NUTRNPOINDENTCNL',Null,'0','1','0','0','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\Purchaseorder?FnType=Cancel',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','1','36','E','PUV2~2~1~36~E  ','PUV2~1~0~1~E   ','PO Amendment ','1','PUV2NUTRNPOAMEND',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseCtrl\Purchaseorder?FnType=Amend',Null,Null)
+GO
+
+                                                                     ----PUV2 Masters---
+          -------------------------------------------------------------------------------------------------------------------
+Insert into PRG_MENU values ('PUV2    ','2','2','3','E','PUV2~2~2~3~E   ','PUV2~1~0~2~E   ','PO Type','1','PUV2NUMSTPOTYPE',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoType',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','4','E','PUV2~2~2~4~E   ','PUV2~1~0~2~E   ','PO Terms','1','PUV2NUMSTPOTERMSCOND',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoTermsConditions',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','6','E','PUV2~2~2~6~E   ','PUV2~1~0~2~E   ','Applicable Tax','1','PUV2NUMSTAPPLTAX',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstApplicableTax',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','7','E','PUV2~2~2~7~E   ','PUV2~1~0~2~E   ','Applicable Terms','1','PUV2NUMSTAPPLTERMS',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstApplicabeterms',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','11','E','PUV2~2~2~11~E  ','PUV2~1~0~2~E   ','Tax','1','PUV2NUMSTTAX',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoTax',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','15','E','PUV2~2~2~15~E  ','PUV2~1~0~2~E   ','PO Terms Type','1','PUV2NUMSTPOTERMSTYPE',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoTermsTypes',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','16','E','PUV2~2~2~16~E  ','PUV2~1~0~2~E   ','Target Tax Structure','1','PUV2NUMSTTARGETTAXSTRUC',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstTargetTaxStructure',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','17','E','PUV2~2~2~17~E  ','PUV2~1~0~2~E   ','Approved Supplier Item','1','PUV2NUMSTAPPRSUPPITEM',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseCtrl/MstApprovedSuppItem',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','23','E','PUV2~2~2~23~E  ','PUV2~1~0~2~E   ','Purchase Order Number','1','PUV2NUMSTPOSRNO',Null,'0','1','0','0','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstPuchaserOrderNumber',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','26','E','PUV2~2~2~26~E  ','PUV2~1~0~2~E   ','PO Print Program','1','PUV2NUMSTPOPRTPRG',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstPOPrintPrograms',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','29','E','PUV2~2~9~29~E  ','PUV2~1~0~2~E   ','PO Approval Settings','1','PUV2NUMSTPOAPPSET',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseMstWeb\MstPoApprovalSettings',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','31','E','PUV2~2~9~31~E  ','PUV2~1~0~2~E   ','Approval Authority','1','PUV2NUMSTAPPRLAUTH',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstApprovalAuthority',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','33','E','PUV2~2~9~33~E  ','PUV2~1~0~2~E   ','PO Type User','1','PUV2NUMSTPOTYPEUSER',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstPoTypeUser',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','2','34','E','PUV2~2~9~34~E  ','PUV2~1~0~2~E   ','Supplier Terms','1','PUV2NUMSTSUPTEMCOND',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstSupplierTermsandCondition',Null,Null)
+GO
+
+                                                           ------PUV2 Queries----
+                 ---------------------------------------------------------------------------------------------------------
+INSERT [DBO].PRG_MENU VALUES('PUV2',2,3,3,'E','PUV2~2~3~3~E','PUV2~1~0~3~E','Po Item Query',1,'PUV2NUQUPOITMQRY',NULL,0,0,0,1,'Admin',GETDATE(),1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'../purchasereports/PoItemQuery',NULL,NULL)
+GO
+
+                                                                  --------PUV2 Reports--------
+                        -------------------------------------------------------------------------------------------------------------------
+Insert into PRG_MENU values ('PUV2    ','2','4','1','E','PUV2~2~4~1~E   ','PUV2~1~0~4~E   ','Item  PO Status','1','PUV2NUREPPRODORDST',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseReports\ItemWisePurchaseRequest',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','4','3','E','PUV2~2~4~3~E   ','PUV2~1~0~4~E   ','Supplier  PO Status','1','PUV2NUREPSUPPORDST',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseReports\PurSwisePOStsRpt',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','4','6','E','PUV2~2~4~6~E   ','PUV2~1~0~4~E   ','Item Rate Agreement','1','PUV2NUREPITMBLKLST',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseReports\ItemWiseRateAgrmentLst',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','4','7','E','PUV2~2~4~7~E   ','PUV2~1~0~4~E   ','Supplier Rate Agreement ','1','PUV2NUREPSUPPBLKLST',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseReports\SuplierRateAgrmentLst',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','4','28','E','PUV2~2~4~28~E  ','PUV2~1~0~4~E   ','PR Status Report','1','PUV2NUREPINDST',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseReports\PurRequstStatsRpt',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','4','32','E','PUV2~2~4~32~E  ','PUV2~1~0~4~E   ','Item PR Status ','1','PUV2NUREPPUPRODPUSTREP',Null,'0','0','0','1','Admin ','12/15/2021 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\PurchaseReports\ItemWisePRStatusRpt',Null,Null)
+GO
+
+Insert into PRG_MENU values ('PUV2    ','2','11','12','E','PUV2~2~11~12~E ','PUV2~1~0~11~E  ','Purchase Requsition Reprint','1','PUV2NUTRNSERPRREPRINT',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+
+                                                                                --- PUV2 --Analysis
+-------------------------------------------------------------------------------------------------------------------------------------------
+Insert into PRG_MENU values ('PUV2','2','9','5','E','PUV2~2~9~5~E  ','PUV2~1~0~9~E','Po Item Rate Variance','1','PUV2NUQUPOITMRATVARES',Null,'1','1','1','1','Admin ','07/27/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseReports/PoItemRateVariance',Null,Null)
+GO
+
+---Target Tax Structure::
+update PRG_MENU set W_LINK = '..\PurchaseMstWeb\MstTargetTaxStructure' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTTARGETTAXSTRUC'
+GO
+
+-----Applicable Terms::
+update PRG_MENU set W_LINK = '..\PurchaseMstWeb\MstApplicabeterms' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTAPPLTERMS'
+GO
+
+-----Applicable Tax::
+update PRG_MENU set W_LINK = '..\PurchaseMstWeb\MstApplicableTax' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTAPPLTAX'
+GO
+
+update prg_menu set W_LINK='..\PurchaseCtrl\PurMatAppr',W_IND=1 where module_id='PUV2' and PROGRAM_LINK_ID='PUV2NUTRNPUINDENTAPPR'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPLSTPRICE'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPPRAUDIT'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPVDITMAUDITREP'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPSUPPORDSUMM'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPPRODPURSUMM'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPPRODPUR'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUREPPUPORCPTLST'
+go
+
+update prg_menu set w_ind=null where  module_id='puv2' and program_link_id='PUV2NUTRNSHRTCLSEPUORD'
+go
+
+
+update prg_menu set w_link='..\PurchaseCtrl\PurchaseRequisiton' where  module_id='puv2' and program_link_id='PUV2NUTRNPUINDENT'
+go
+
+update prg_menu set w_link='..\PurchaseCtrl\PurchaseRequisiton?FnTYpe=ReOrder' where  module_id='puv2' and program_link_id='PUV2NUTRNSHRTCLSEPUORD'
+go
+
+update prg_menu set Menu_nm='PR Cancel ',w_ind='1', w_link='..\PurchaseCtrl\PurchaseRequisiton?FnTYpe=Cancel' where  module_id='puv2' and program_link_id='PUV2NUTRNSEP3'
+go
+
+update prg_menu set w_link='..\PurchaseCtrl\PurchaseRequisiton?FnTYpe=ShortClose' ,menu_nm='PR ShortClose'  where  module_id='puv2' and program_link_id='PUV2NUTRNSHRTCLSEPUORD'
+go
+
+update prg_menu set w_link='..\PurchaseCtrl\Purchaseorder',menu_nm='Purchase Order' where  module_id='puv2' and program_link_id='PUV2NUTRNPO'
+go
+
+
+
+UPDATE PRG_MENU SET MENU_NM='PR Cancel 'WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNCANPUORD'
+go
+
+----------REPORTS
+update prg_menu set Menu_nm='Item  PO Status', w_link='..\PurchaseReports\ItemWisePoStatus' where  module_id='puv2' and program_link_id='PUV2NUREPPRODORDST'
+go
+
+update prg_menu set Menu_nm='Supplier  PO Status', w_link='..\PurchaseReports\PurSwisePOStsRpt' where  module_id='puv2' and program_link_id='PUV2NUREPSUPPORDST'
+go
+
+update prg_menu set Menu_nm='Supplier Rate Agreement ', w_link='..\PurchaseReports\SuplierRateAgrmentLst' where  module_id='puv2' and program_link_id='PUV2NUREPSUPPBLKLST'
+go
+
+update prg_menu set Menu_nm='Item Rate Agreement', w_link='..\PurchaseReports\ItemWiseRateAgrmentLst' where  module_id='puv2' and program_link_id='PUV2NUREPITMBLKLST'----
+go
+
+update prg_menu set Menu_nm='PR Status Report', w_link='..\PurchaseReports\PurRequstStatsRpt' where  module_id='puv2' and program_link_id='PUV2NUREPINDST'
+go
+
+update  PRG_MENU set W_LINK='..\PurchaseReports\ItemWisePurchaseRequest',MENU_NM='Item Wise PR Status' WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUREPPUPRODPUSTREP'
+GO
+
+update prg_menu set Menu_nm='PR Cancel ',w_ind='1', w_link='..PurchaseCtrl/PurchaseRequisiton?FnTYpe=Cancel' where  module_id='puv2' and program_link_id='PUV2NUTRNSEP3'
+go
+
+update prg_menu set Menu_nm='Item  PO Status', w_link='..\PurchaseReports\ItemWisePurchaseRequest' where  module_id='puv2' and program_link_id='PUV2NUREPPRODORDST'
+go
+
+
+update  PRG_MENU set W_LINK='..\PurchaseReports\ItemWisePurchaseRequest',MENU_NM='Item Wise PR Status' WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUREPPUPRODPUSTREP'
+GO
+-------Transcation
+
+UPDATE PRG_MENU SET W_LINK='..\PurchaseCtrl\PurchaseRequisiton?FnType=ShortClose 'WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNSHRTCLSEPUORD'
+go
+
+UPDATE PRG_MENU SET W_LINK='..\PurchaseCtrl\PurchaseRequisiton?FnType=Cancel'WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNCANPUORD'
+go
+
+UPDATE PRG_MENU SET W_LINK='..\PurchaseCtrl\PurchaseRequisiton?FnType=ShortClose 'WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPUINDENTSHRTCL'
+go
+
+UPDATE PRG_MENU SET W_LINK='..\PurchaseCtrl\Purchaseorder?FnType=Cancel'WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNSERPOCANC'
+go
+
+UPDATE PRG_MENU SET W_LINK='..\PurchaseCtrl\Purchaseorder?FnType=Amend'WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPOAMEND'
+GO
+
+update PRG_MENU set W_LINK = '..\PurchaseMstWeb\MstPoApprovalSettings' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTPOAPPSET'
+GO
+
+update PRG_MENU set W_LINK = '..\PurchaseMstWeb\MstPoApprovalSettings' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTPOAPPSET'
+GO
+
+update PRG_MENU set w_link = '../PurchaseMstWeb/MstPoTypeUser' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTPOTYPEUSER'
+GO
+
+update prg_menu set w_link = '../PurchaseMstWeb/MstSupplierTermsandCondition' where module_id ='puv2' and program_link_id = 'PUV2NUMSTSUPTEMCOND'
+GO
+
+update PRG_MENU set W_IND = '1' , W_LINK = '../PurchaseMstWeb/MstApprovalAuthority' where PROGRAM_LINK_ID = 'PUV2NUMSTAPPRLAUTH' and MODULE_ID = 'PUV2'
+GO
+
+update PRG_MENU set W_LINK='../PurchaseCtrl/PurchaseRequisiton?FnType=Reorder',MENU_NM='PR Reorder' where PROGRAM_LINK_ID='PUV2NUTRNREORD'
+GO
+
+
+
+                                                                                              ------ INVENTORY UPDATE SCRIPTS.-------
+                                                         -----------------------------------------------------------------------------------------------
+
+update PRG_MENU set W_IND = 1 ,W_LINK = '..\MaterialReports\MaterialRequestStatusReport',MENU_NM = 'MR Status Report' where MODULE_ID = 'INV2' and PROGRAM_LINK_ID = 'INREPMTRQST'
+GO
+
+update PRG_MENU set W_IND = 1 , W_LINK = '..\MaterialReports\CostCenterwiseItemConsumptionSummary', MENU_NM = 'Cost Center Item Summary' where PROGRAM_LINK_ID = 'INREPCOSTCONSSUMM' and MODULE_ID = 'INV2'
+GO
+
+update PRG_MENU set W_LINK='../MaterialReports/StoctReconciliationReport' ,W_IND=1 where PROGRAM_LINK_ID='INV2RPTRNPHYINVRECON'and MODULE_ID='inv2'
+GO
+
+UPDATE PRG_MENU SET W_IND = '1' , W_LINK = '..\MaterialAnalysis\CostCenterConsumptionSummary' WHERE MODULE_ID = 'INV2' AND PROGRAM_LINK_ID = 'INREPDEPTCONSSUMM'
+GO
+update prg_menu set w_link='..\MaterialCtrl\MaterialReconcillation' where program_link_id='INTRNPHYINVRECON' and  module_id='inv2'
+GO
+
+UPDATE PRG_MENU SET  W_IND='1' , W_LINK='../MaterialCtrl/MatReceiptPrint' WHERE PROGRAM_LINK_ID='INV2REPMATRECPTNOTE'
+GO
+
+update PRG_MENU set W_IND = 1,W_LINK = '..\MaterialMstWeb\MPMSTSettings' , MENU_NM = 'Settings' where PROGRAM_LINK_ID = 'INMNUMSTSTRSETT' and MODULE_ID = 'INV2'
+GO
+
+update prg_menu set W_LINK='../MaterialCtrl/StoreMnthClose' ,w_ind=1  where  program_link_id='INTRNSTRMNTHCLOSE'and MODULE_ID='INV2'
+GO
+
+UPDATE PRG_MENU SET W_IND = '1',W_LINK = '../MaterialAnalysis/departmentConsumptionSummary',MENU_NM = 'Dept Consumption' WHERE PROGRAM_LINK_ID = 'INREPDEPTCONSUMPTION' AND MODULE_ID = 'INV2'
+GO
+
+update PRG_MENU set W_IND=1,W_LINK='..\MaterialReports\ExpiryItemList' where PROGRAM_LINK_ID ='INREPEXPITEMLIST' and MODULE_ID='inv2'
+go
+
+UPDATE PRG_MENU SET W_LINK='..\MaterialCtrl\MaterialReceipt?Menu=ReciptReturn'  WHERE module_id='inv2' AND PROGRAM_LINK_ID='INTRNRECPTRETN'
+GO
+
+update prg_menu set MENU_NM ='XYZ Stock Analysis' where PROGRAM_LINK_ID='INV2RPTXYZCOSUMALYS'
+GO
+
+UPDATE PRG_MENU SET MENU_NM='Item Stock Query' where module_id='INV2' and program_link_id='INV2REPITMSRDQRY'
+GO
+
+update prg_menu set menu_nm='Stock Value Summary' where PROGRAM_LINK_ID='INV2REPSTRSUMM'
+GO
+
+update prg_menu set menu_nm='Item Cons.Query' where PROGRAM_LINK_ID='INV2REPITEMCOSMSUMMY'
+GO
+
+update prg_menu set W_IND='1',W_LINK='..\MaterialReports/MRAuditReport' where PROGRAM_LINK_ID ='INREP2MRAUDITRPT'
+GO
+
+update PRG_MENU set menu_nm='Non Moving Stock' where MODULE_ID='inv2' and PROGRAM_LINK_ID='INV2INMNUANALNONMOING'
+GO
+
+                                                                                   ----  NAME SHORT UPDATE SCRIPT-----           
+
+update PRG_MENU set W_IND = 1 ,W_LINK = '..\MaterialReports\MaterialRequestStatusReport',MENU_NM = 'MR Status Report' where MODULE_ID = 'INV2' and PROGRAM_LINK_ID = 'INREPMTRQST'
+GO
+
+update PRG_MENU set W_IND = 1 , W_LINK = '..\MaterialReports\CostCenterwiseItemConsumptionSummary', MENU_NM = 'CC Item Summary' where PROGRAM_LINK_ID = 'INREPCOSTCONSSUMM' and MODULE_ID = 'INV2'
+GO
+
+UPDATE PRG_MENU SET W_IND = '1' , W_LINK = '..\MaterialAnalysis\CostCenterConsumptionSummary',MENU_NM='CC Summary' WHERE MODULE_ID = 'INV2' AND PROGRAM_LINK_ID = 'INREPDEPTCONSSUMM'
+GO
+
+update PRG_MENU set W_IND = '1', W_LINK = '..\MaterialAnalysis\ReceiptAnaysis' where PROGRAM_LINK_ID = 'INREPRIANALYSIS' and MODULE_ID = 'INV2'
+GO
+
+update PRG_MENU set MENU_NM = 'Dept Item Summary' , W_IND = '1' , W_LINK = '..\MaterialReports\DepartmentItemConsumptionSummary' where MODULE_ID = 'INV2' and PROGRAM_LINK_ID = 'INREPDEPTITEMCONSSUMM'
+GO
+
+UPDATE PRG_MENU SET W_IND = '1',W_LINK = '../MaterialAnalysis/departmentConsumptionSummary',MENU_NM = 'Dept Consumption' WHERE PROGRAM_LINK_ID = 'INREPDEPTCONSUMPTION' AND MODULE_ID = 'INV2'
+ GO
+
+                                                                             ------ Menue order changed script--------
+                       ------------------------------------------------------------------------------------------------------------------------------------
+
+update prg_menu set m_seq_no='1' where PROGRAM_LINK_ID='PUV2NUTRN' and MODULE_ID='puv2'
+go
+update prg_menu set m_seq_no='2' where PROGRAM_LINK_ID='PUV2NUQU' and MODULE_ID='puv2'
+go
+update prg_menu set m_seq_no='3' where PROGRAM_LINK_ID='PUV2NUREP' and MODULE_ID='puv2'
+go
+update prg_menu set m_seq_no='4' where program_link_id='PUV2NUANAL' and  module_id='PUV2' 
+go
+update prg_menu set m_seq_no='5' where program_link_id='PUV2NUMST'   and module_id='PUV2'
+go
+update prg_menu set m_seq_no='6' where PROGRAM_LINK_ID='PUV2NUSERVICE' and MODULE_ID='puv2'
+go
+update prg_menu set m_seq_no='7' where PROGRAM_LINK_ID='PUV2NUTLS' and MODULE_ID='puv2'                    
+go
+update prg_menu set m_seq_no='1' where PROGRAM_LINK_ID='INTRN' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='2' where PROGRAM_LINK_ID='INMNUQU' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='3' where PROGRAM_LINK_ID='INREP' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='4' where PROGRAM_LINK_ID='INMNUANAL' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='5' where PROGRAM_LINK_ID='INMST' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='6' where PROGRAM_LINK_ID='INMNUTOOL' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='7' where PROGRAM_LINK_ID='INSETT' and MODULE_ID='INV2'
+go
+update prg_menu set m_seq_no='8' where PROGRAM_LINK_ID='INMNUFAV' and MODULE_ID='INV2'
+go
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                               ------page order changed script.
+
+update PRG_MENU set W_LINK = '..\PurchaseMstWeb\MstPoApprovalSettings' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTPOAPPSET'
+go
+update PRG_MENU set w_link = '../PurchaseMstWeb/MstPoTypeUser' where MODULE_ID = 'PUV2' and PROGRAM_LINK_ID = 'PUV2NUMSTPOTYPEUSER'
+go
+update prg_menu set w_link = '../PurchaseMstWeb/MstSupplierTermsandCondition' where module_id ='puv2' and program_link_id = 'PUV2NUMSTSUPTEMCOND'
+go
+update PRG_MENU set W_IND = '1' , W_LINK = '../PurchaseMstWeb/MstApprovalAuthority' where PROGRAM_LINK_ID = 'PUV2NUMSTAPPRLAUTH' and MODULE_ID = 'PUV2'
+go
+update prg_menu set seq_no ='5' where PROGRAM_LINK_ID='INTRNMATREGCNL'
+go
+update prg_menu set NODE_KEY ='IN~2~1~4~E' where PROGRAM_LINK_ID='INTRNMATREGCNL' and  module_id='inv2'
+go
+update prg_menu set node_key ='INV2~2~1~32~E' where PROGRAM_LINK_ID='INREPMATISSNOTE' and  module_id='inv2'
+go
+update prg_menu set PARENT_SEQ_NO ='1' where PROGRAM_LINK_ID='INREPMATISSNOTE' and  module_id='inv2'
+go
+update PRG_MENU set menu_nm='MR Reprint' where PROGRAM_LINK_ID='INTRNMATREQREPRN' and  MODULE_ID='inv2'
+go
+update PRG_MENU set menu_nm='MR Cancel' where PROGRAM_LINK_ID='INTRNMATREGCNL' and  MODULE_ID='inv2'
+go
+
+update prg_menu set w_link='..\PurchaseReports\ItemWisePRStatusRpt' where module_id='puv2' and program_link_id='PUV2NUREPPUPRODPUSTREP'
+go
+
+update prg_menu set seq_no ='32' where PROGRAM_LINK_ID='INREPMATISSNOTE'
+GO
+update prg_menu set NODE_KEY ='INV2~2~1~32~E' where PROGRAM_LINK_ID='INREPMATISSNOTE' and  module_id='inv2'
+GO
+update prg_menu set PARENT_KEY ='INV2~1~0~1~E' where PROGRAM_LINK_ID='INREPMATISSNOTE' and  module_id='inv2'
+GO
+
+
+UPDATE PRG_MENU SET SEQ_NO='42', NODE_KEY='INV2~2~1~42~E' WHERE PROGRAM_LINK_ID='INTRNSTRMNTHCLOSE'
+GO
+UPDATE PRG_MENU SET seq_no='11' ,PARENT_KEY='INV2~1~0~7~E'  , NODE_KEY='INV2~2~7~11~E' ,parent_seq_no='7' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID='INV2REPSTRSUMM'
+GO
+UPDATE PRG_MENU SET PARENT_KEY='INV2~1~0~7~E'  , NODE_KEY='INV2~2~7~83~E' ,parent_seq_no='7' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID='INV2REPSTRSUMM'
+GO
+UPDATE PRG_MENU SET seq_no='13' ,PARENT_KEY='INV2~1~0~7~E'  , NODE_KEY='INV2~2~7~13~E' ,parent_seq_no='7' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID='INV2REPGIHVLUSTKITM'
+GO
+UPDATE PRG_MENU SET seq_no='17', PARENT_KEY='INV2~1~0~7~E'  , NODE_KEY='INV2~2~7~17~E' ,parent_seq_no='7' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID='INV2INMNUANALNONMOING'
+GO
+UPDATE PRG_MENU SET SEQ_NO='24', NODE_KEY='INV2~2~1~24~E' WHERE PROGRAM_LINK_ID='INV2REPMATRECPTNOTE'
+GO
+UPDATE PRG_MENU SET SEQ_NO='38',NODE_KEY='INV2~2~1~38~E' WHERE PROGRAM_LINK_ID='INTRNSTRSTROPSTK'
+GO
+update PRG_MENU set PARENT_KEY='PUV2~1~0~9~E' where PROGRAM_LINK_ID='PUV2NUQUPOITMRATVARES'
+GO
+update PRG_MENU set PARENT_KEY='PUV2~1~0~9~E' ,w_link=null,W_IND=null where PROGRAM_LINK_ID='PUV2REPPOITRTEVATNCE'
+GO
+update PRG_MENU set PARENT_KEY='PUV2~1~0~9~E' where PROGRAM_LINK_ID='PUV2NUQUPOITMRATVARES'
+GO
+update PRG_MENU set PARENT_KEY='PUV2~1~0~9~E' ,parent_seq_no='9' where PROGRAM_LINK_ID='PUV2NUQUPOITMRATVARES'
+GO
+update PRG_MENU set PARENT_KEY='PUV2~1~0~9~E' ,w_link=null,W_IND=null where PROGRAM_LINK_ID='PUV2REPPOITRTEVATNCE'
+GO
+
+-----19.11.2022
+ UPDATE PRG_MENU SET PARENT_SEQ_NO='2'  ,SEQ_NO='28',PARENT_KEY='PUV2~1~0~2~E   '  ,NODE_KEY='PUV2~2~9~28~E  '  WHERE PROGRAM_LINK_ID='PUV2NUMSTPOAPPSET'
+ GO
+
+UPDATE PRG_MENU SET PARENT_SEQ_NO='2', SEQ_NO='30', PARENT_KEY='PUV2~1~0~2~E   ' ,NODE_KEY='PUV2~2~9~30~E  ' WHERE PROGRAM_LINK_ID='PUV2NUMSTAPPRLAUTH'
+GO
+
+UPDATE PRG_MENU SET PARENT_SEQ_NO='2' ,SEQ_NO='32' ,PARENT_KEY='PUV2~1~0~2~E   ' ,NODE_KEY='PUV2~2~9~32~E  ' WHERE PROGRAM_LINK_ID='PUV2NUMSTPOTYPEUSER'
+GO
+
+UPDATE PRG_MENU SET PARENT_SEQ_NO='2' ,SEQ_NO='34',PARENT_KEY='PUV2~1~0~2~E   ' , NODE_KEY='PUV2~2~9~34~E  ' WHERE PROGRAM_LINK_ID='PUV2NUMSTSUPTEMCOND'
+GO
+
+UPDATE PRG_MENU  SET MENU_NM='Analysis',PROGRAM_LINK_ID='PUV2NUANAL' WHERE NODE_KEY='PUV2~1~0~9~E   '
+GO
+
+update prg_menu set M_SEQ_NO='4' where PROGRAM_LINK_ID='PUV2NUANAL'
+GO
+----21.11.2022
+
+UPDATE PRG_MENU SET PARENT_KEY='PUV2~1~0~9~E' ,NODE_KEY='PUV2~2~9~5~E' ,SEQ_NO='5',PARENT_KEY='9'  WHERE MODULE_ID='PUV2'  AND PROGRAM_LINK_ID='PUV2NUQUPOITMRATVARES'
+GO
+
+UPDATE PRG_MENU SET PARENT_SEQ_NO='7', NODE_KEY='INV2~2~7~11~E'  ,PARENT_KEY ='INV2~1~0~7~E   ' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID='INV2REPSTRSUMM'
+go
+
+update PRG_MENU set W_LINK='../PurchaseCtrl/PRReprint' where MODULE_ID='puv2' and PROGRAM_LINK_ID='PUV2NUTRNINDENTREPRN'
+go
+update PRG_MENU set W_LINK='../PurchaseCtrl/PurOrderReprint' where MODULE_ID='puv2' and PROGRAM_LINK_ID='PUV2NUTRNPOREPRN'
+go
+
+---------01/12/2022
+
+UPDATE PRG_MENU SET W_LINK='../PurchaseCtrl/PurchaseRequisiton?FnType=ShortClose'
+WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPUINDENTSHRTCL'
+go
+
+UPDATE PRG_MENU SET W_LINK='..\PurchaseCtrl\Purchaseorder?FnType=Cancel'
+WHERE MODULE_ID='PUV2' AND PROGRAM_LINK_ID='PUV2NUTRNPOINDENTCNL'
+go
+
+
+----08/12/22
+
+update PRG_MENU set w_link='',W_IND=null WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID='INTRNINDENTAPPR'
+GO
+
+---20/12/2022
+
+Insert into PRG_MENU values ('INV2   ','2','7','19','E','INV2~2~1~19~E ','INV2~1~0~7~E',' Supplier Wise Receipt','1','INV2INMNUANALSUPPLRECPT',Null,'1','1','1','1','Admin ','12/14/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialAnalysis/SupplierReceipt',Null,Null)
+go 
+
+----04/01/23
+
+update PRG_MENU set NEW_IND=1,MOD_IND=1,DEL_IND=1 where PROGRAM_LINK_ID='INMSTREORDGRP'
+go
+
+--09/03/2023
+
+ update PRG_MENU set NEW_IND='1' where PROGRAM_LINK_ID='PUV2NUTRNREORD'
+go
+
+--15/03/23
+
+---29/3/23-- Applicable Currency---
+
+Insert into PRG_MENU values ('PUV2   ','2','2','19','E','PUV2~2~9~19~E ','PUV2~1~0~2~E  ','Applicable Currency','1','PUV2MSTAPPLICSURR',Null,'1','1','1','1','Admin ','12/15/2021 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../PurchaseMstWeb/MstApplicableCurrency',Null,Null)
+GO
+
+update PRG_MENU set SEQ_NO=19,NODE_KEY='PUV2~2~9~19~E ' where  MODULE_ID='PUV2' and PROGRAM_LINK_ID='PUV2MSTAPPLICSURR'
+go
+
+---25-4-23	--Expiry Item List--
+
+Insert into PRG_MENU values ('INV2    ','2','3','9','E','INV2~2~3~9~E   ','INV2~1~0~3~E   ','Expiry Item List','1','INREPEXPITEMLIST',Null,'0','0','0','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialReports\ExpiryItemList',Null,Null)
+GO
+
+update PRG_MENU set W_LINK='..\MaterialReports\StockExpiryList' where MODULE_ID='inv2' and PROGRAM_LINK_ID='INREPEXPITEMLIST'
+go
+
+---03/05/23---- new print concept  ----
+--purchase
+UPDATE PRG_MENU SET W_IND =1, W_LINK='..\POPrint\POReprint' WHERE MODULE_ID='PUV2' AND MENU_LEVEL=2 and PARENT_SEQ_NO =1
+AND PROGRAM_LINK_ID ='PUV2NUTRNPOREPRN'
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='..\POPrint\PRReprint' WHERE MODULE_ID='PUV2' AND MENU_LEVEL=2 and PARENT_SEQ_NO =1
+AND PROGRAM_LINK_ID ='PUV2NUTRNINDENTREPRN'
+GO
+
+--Material
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='..\MATPrint\MatIssueReprint' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID ='INREPMATISSNOTE'
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='..\MATPrint\MatReqReprint' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID ='INTRNMATREQREPRN'
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='..\MATPrint\MatReceiptReprint' WHERE MODULE_ID='INV2' AND PROGRAM_LINK_ID ='INV2REPMATRECPTNOTE'
+GO
+
+
+
+--------------Revoke Closure
+
+Insert into PRG_MENU values ('INV2   ','2','1','46','E','INV2~2~1~46~E ','INV2~1~0~1~E  ','Revoke Closure',
+'1','INVTRNREVKCLSURE',Null,'1','1','1','1','Admin ','06/10/2023 10:20:25',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',
+'..\MaterialCtrl\RevokeClosure',Null,Null)
+GO
+
+
+---------------stock reconcilation(19/7/23)
+
+Insert into PRG_MENU values ('INV2   ','2','3','87','E','INV2~2~3~87~E ','INV2~1~0~3~E  ','Stock Reconciliation','1','INV2RPTRNPHYINVRECON',Null,'1','1','1','1','Admin ','06/11/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MaterialReports/StoctReconciliationReport',Null,Null)
+GO
+
+
+UPDATE PRG_MENU SET W_LINK ='../MaterialReports/StockReconciliation',MENU_NM='Stock Reconciliation' where PROGRAM_LINK_ID='INV2RPTRNPHYINVRECON'
+GO
+
+--check stock without recompute 13/09/2023
+
+Insert into PRG_MENU values ('INV2','2','1','40','E','INV2~2~1~40~E','INV2~1~0~1~E','Check Stock','1','INV2STOCKCHK',Null,'1','1','1','1','Admin ','12/10/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MaterialMstWeb\CheckStockV2',NULL,NULL)
+GO
+
+
+
+
+
+-----------------7/2/2024-------
+
+----PR Audit Report 
+Insert into PRG_MENU values ('PUV2   ','2','4','34','E','PUV2~2~4~34~E ','PUV2~1~0~4~E  ','PR Audit Report','1','PUV2NUREPPRAUDT',Null,'1','1','1','1','Admin ',
+'11/20/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'../PurchaseReports/PRAuditReport',Null,Null)
+GO
+
+----PO Audit Report'
+
+Insert into PRG_MENU values ('PUV2   ','2','4','36','E','PUV2~2~4~36~E ','PUV2~1~0~4~E  ','PO Audit Report','1','PUV2NUREPPOAUDT',Null,'1','1','1','1','Admin ',
+'11/30/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'../PurchaseReports/PoAuditReport',Null,Null)
+GO
+
+----MR Audit Reports
+
+Insert into PRG_MENU values ('INV2   ','2','3','74','E','INV2~2~3~74~E  ','INV2~1~0~3~E   ','MR Audit Reports','1','INREP2MRAUDITRPT',Null,'0','0','0','1','Admin ','12/02/2023 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update prg_menu set W_IND='1',W_LINK='../MaterialReports/MRAuditReport' where PROGRAM_LINK_ID ='INREP2MRAUDITRPT'
+GO
+
+
+

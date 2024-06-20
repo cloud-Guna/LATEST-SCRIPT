@@ -1,0 +1,402 @@
+-- Banquet Menu Scripts
+--Transaction
+UPDATE PRG_MENU SET W_IND =1 WHERE MENU_LEVEL=1 AND MODULE_ID='BQ' AND PROGRAM_LINK_ID LIKE 'BQMNUTRN'
+GO  
+--Queries
+UPDATE PRG_MENU SET W_IND =1 WHERE MENU_LEVEL=1 AND MODULE_ID='BQ' AND PROGRAM_LINK_ID LIKE 'BQMNUQU'
+GO  
+--Master
+UPDATE PRG_MENU SET W_IND =1 WHERE MENU_LEVEL=1 AND MODULE_ID='BQ' AND PROGRAM_LINK_ID LIKE 'BQMNUMST'
+GO  
+--Report
+UPDATE PRG_MENU SET W_IND =1 WHERE MENU_LEVEL=1 AND MODULE_ID='BQ' AND PROGRAM_LINK_ID LIKE 'BQMNURPT'
+GO  
+--Analysis
+UPDATE PRG_MENU SET W_IND =1 WHERE MENU_LEVEL=1 AND MODULE_ID='BQ' AND PROGRAM_LINK_ID LIKE 'BQMNUANALYSIS'
+GO  
+
+
+---------------------------------Transaction------------------------
+---BQ Reservation(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQTrans/BQReservation' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =1 AND PROGRAM_LINK_ID ='BQMNUTRNBQRSVCR' 
+GO
+
+--BQ Block(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQTrans/BQTrnsBlock' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =1
+AND PROGRAM_LINK_ID ='BQMNUTRNBLKVENUE' 
+GO
+
+--BQ FuncProsPectus(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQTrans/BQTrnFPPectus' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =1 AND PROGRAM_LINK_ID ='BQMNUTRNFP' 
+GO
+
+--BQ FuncProsPectus Cancel(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQTrans/BQTrnFPCan' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =1 AND PROGRAM_LINK_ID ='BQMNUTRNFPRECNCL' 
+GO
+
+--BQ FuncProsPectus Cancel(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQTrans/BQTrnFPReprint' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =1 AND PROGRAM_LINK_ID ='BQMNUTRNFPREPRNT' 
+GO
+
+-----------------------------------------------------Queries---------------------------------------------
+--BQ Venue Booking(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQQueries/BQVenueBooking' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =4 AND PROGRAM_LINK_ID ='BQMNUQRYVENUEBOOK' 
+GO
+
+--BQ Status(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQQueries/BQBanquetStatus' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =4 AND PROGRAM_LINK_ID ='BQMNURPTBNSTATUS' 
+GO
+
+---Banquet Reservation List
+
+ update PRG_MENU set W_IND=1,W_link='../BQQueries/BQReservationListRpt'  where Program_Link_ID='BQMNURPTBNRESLST' and Module_id='BQ'
+GO
+
+-----------------------------------------------------Reports--Working-------------------------------------------------------------------------
+
+--Settlement Type Report(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQReports/BQRptSettleType' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =5 AND PROGRAM_LINK_ID ='BQMNURPTSETTLTYPE'
+GO
+--Banquet Sales Day Book
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQReports/BQReportSalesDayBook?Type=1' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =5 AND PROGRAM_LINK_ID ='BQMNURPTBQSADAYBOOK'
+GO
+
+--Banquet Sales Day Book monthly
+update PRG_MENU set w_link='../BQReports/BQReportSalesDayBook?Type=2',W_IND='1' where PROGRAM_LINK_ID='BQMNURPTBQMNTHSADAYBK'
+go
+
+--Settlement
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQReports/BQSettlementRpt' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =5 AND PROGRAM_LINK_ID ='BQMNURPTBQSETTLE'
+GO
+
+--Bill Print
+UPDATE PRG_MENU SET W_IND =1, W_LINK ='../BQReports/BQRptbillReprint' WHERE module_id='bq' and PROGRAM_LINK_ID ='BQMNUTRNBILLREPRNT'
+go
+
+
+--Banquet Advance Refund
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQReport/BQAdvanceRefundRpt' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =5 AND PROGRAM_LINK_ID ='BQMNURPTBQREFUND'
+GO
+
+---------------------------------------------------- Analysis-------------------------------------------------------------------
+
+--BQ Contribution Analysis(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQAnalysis/BQContribution' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =6 AND PROGRAM_LINK_ID ='BQMNUQSALES'
+GO
+
+--BQ SalesPerformance
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQReport/BQRptSalesPerformance' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =6 AND PROGRAM_LINK_ID ='BQMNUQBQSLPERFMNCE' 
+GO
+--BQ Salesforecast
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQReport/BQRptSalesForeCast' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =6 AND PROGRAM_LINK_ID ='BQMNUQBQSLFCT' 
+GO
+--Popularity Analysis
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQReport/BQPopularityAnalysis' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =6 AND PROGRAM_LINK_ID ='BQMNURPTPOPANA' 
+GO
+--Cover Analysis
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQReport/BQCoverAnalysis' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =6 AND PROGRAM_LINK_ID ='BQMNUQCOVANAL' 
+GO
+--Sales Performance
+
+Update PRG_MENU set W_ind=1,W_LINK='../BQAnalysis/BQSalesPerformance' where Module_id='BQ' and PROGRAM_LINK_ID='BQMNUQBQSLPERFMNCE'
+GO
+-----------------------------------------------------Master --------------------------------------------------------------------
+
+--BQ AID(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstAids' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTAIDS' 
+GO
+
+--BQ AID GROUP(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstAidsGrp' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTAIDSGRP' 
+GO
+
+
+--BQ INFORM TYPE(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstInformTy' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTINTYPE' 
+GO
+
+--BQ ANALYSIS GROUP(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstAnalyGrp' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTANAGRP' 
+GO	
+
+--BQ VENUE GROUP(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstVenueGrp' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTVNUGRP' 
+GO	
+
+--BQ SPLIT VENUE(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstSplitVen' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTSPLTVNU' 
+GO	
+	
+--BQ NC KOT(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstNCKotType' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTNCKOTTY' 
+GO	
+
+--BQ EVENT TYPE(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstEventTy' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTEVNTTY' 
+GO	
+
+--BQ EMPLOYEE CATEGORY(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstCatEmployee' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTCATEMP' 
+GO
+
+--BQ ITEM MENU GROUP(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstIMenuGrp' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTITMMNUGRP' 
+GO
+
+--BQ FOREGIN CURRENY(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstItemRateFCur' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTITMRATEFORNCURR' 
+GO
+
+--BQ BUSINESS SOURCE(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstBusSource' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTBUSNTYPE' 
+GO
+	
+--BQ DEPARRTMENT(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstDepart' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTDEPT' 
+GO
+
+--BQ MARKET SEGMENT (Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstMarkSeg' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTMKTSEG' 
+GO
+
+--BQ FUNCTION TYPE(Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstFunctTy' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTFUNCTYPE' 
+GO
+
+
+--BQ OPEN ITEM
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstOpenItem' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTOPENITEM' 
+GO
+
+
+--BQ ITEM (Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstItem' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMSTBQITEM' 
+GO
+
+--BQ SESSION (Webix New)
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQMaster/BQMstSession' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTSESSION' 
+GO
+
+
+
+
+
+--BQ SETTINGS
+
+
+--BQ GROUP
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQMASTER/BQMSTBQTGROUP' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMSTBQGRP' 
+GO
+
+--BQ OUTLET
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQMASTER/BQMSTBQTOUTLET' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTOUTBQT' 
+GO	
+
+--BQ EVENT
+UPDATE PRG_MENU SET W_IND =0, W_LINK='../BQMASTER/BQMSTBQTEVENTS' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =3 AND PROGRAM_LINK_ID ='BQMNUMSTEVNTS' 
+GO
+
+
+----BQ Settings
+
+update PRG_MENU set W_ind=1,W_LINK='../BQMASTER/BQMstBanquetSetting' where Program_link_id='BQMSTBQCONTROL' and Module_Id='BQ'
+go
+ 
+
+
+
+-------------------------------------------------Cashier--------------------------------
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQRes/BQAdvance' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =2 AND PROGRAM_LINK_ID ='BQMNUCASBQRSVADV' 
+GO
+
+update PRG_MENU set W_IND=1,W_link='../BQRes/BQAdvanceRefund'  where Program_Link_ID='BQMNUCASREFUND' and Module_id='BQ'
+Go
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQBill/BanQuetBillNew' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =2 AND PROGRAM_LINK_ID ='BQMNUTRNBILLCRPRNT' 
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQBill/BanQuetBillSettle' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =2 AND PROGRAM_LINK_ID ='BQMNUCASBILLSETT' 
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQBill/BanQuetBillReSettle' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =2 AND PROGRAM_LINK_ID ='BQMNUCASBILLRESETT' 
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQBill/BanQuetCancelSettl' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =2 AND PROGRAM_LINK_ID ='BQMNUCASVOIDBILLSETL' 
+GO
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQRes/BQKotCharges' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =1 AND PROGRAM_LINK_ID ='BQMNUTRNBQKOTCHRG' 
+GO
+
+update PRG_MENU Set W_IND=1,W_LINK='../BQMASTER/BQMstPlanItems' where Module_id='BQ' and Program_link_id='BQMNUTRNPLANITEMMST'
+go
+
+update PRG_MENU Set W_IND=1,W_LINK='../BQMASTER/BQMstBanquetGrp' where Module_id='BQ' and Program_link_id='BQMSTBQGRP'
+go
+
+---Monthly Venue Position
+
+ update PRG_MENU set MENU_NM='Monthly Venue Position' ,W_IND=1,W_LINK='../BQQueries/BQSessionVenueUsage' where Module_ID='BQ' and Program_link_ID='BQMNUQQUSESVENUSG'
+go
+
+
+update PRG_MENU set W_LINK ='../BQMaster/BQMstVenue',W_IND=1 where PROGRAM_LINK_ID ='BQMNUMSTVENUE' and MODULE_ID='bq'
+
+
+Update PRG_MENU set W_IND=1,W_LINK='../BQAnalysis/BQRptSalesForeCast' where Module_id='bq' and Program_link_id='BQMNUQBQSLFCT'
+go
+update prg_menu set w_ind=1,w_link='../BQReports/BQReportAdavnceReserve' where program_link_id='BQMNURPTBQADVRESVWS'
+go
+
+------23/11/22
+ --Reports --Banquet Advance
+UPDATE PRG_MENU SET W_IND =1, W_LINK='../BQReports/BQAdvanceMaterialization' WHERE MODULE_ID='BQ' AND MENU_LEVEL=2 AND PARENT_SEQ_NO =5 AND PROGRAM_LINK_ID ='BQMNURPTBQADV'
+GO
+
+UPDATE PRG_MENU SET W_IND='1' , W_LINK='../BQReports/BQTaxRpt' WHERE PROGRAM_LINK_ID='BQMNURPTTAXRPT' 
+
+
+
+-------20/02/23-------	Bill Reprint Audit---------
+
+
+ Insert into PRG_MENU values ('BQ      ','2','5','74','E','BQ~2~5~74~E    ','BQ~1~0~5~E     ','Bill Reprint Audit','1','BQMNURPTBILLRPNAUDT',Null,'0','0','0','1','Admin ','03/05/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND='1' ,W_LINK='../BQReports/BQBillReprintAuditRpt' WHERE PROGRAM_LINK_ID='BQMNURPTBILLRPNAUDT'
+GO
+
+-------20/02/23-------	Void Bill--------
+
+ Insert into PRG_MENU values ('BQ      ','2','5','22','E','BQ~2~5~22~E    ','BQ~1~0~5~E     ','Void Bill','1','BQMNURPTVOIDBILL',Null,'0','0','0','1','Admin ','03/05/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND='1' ,W_LINK='../BQReports/BQRptVoidBill' WHERE PROGRAM_LINK_ID='BQMNURPTVOIDBILL'
+go
+
+
+---bill resettlement audit-------(04/04/23)
+---------------------------------------------
+Insert into PRG_MENU values ('BQ      ','2','5','87','E','BQ~2~5~87~E    ','BQ~1~0~5~E     ','Bill Resettlement Audit','1','BQMNURPTBILRESTT',Null,'0','0','0','1','Admin ','05/09/2006 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update PRG_MENU set W_IND='1' ,W_LINK='../BQReports/BQBillResettleAuditRpt' where PROGRAM_LINK_ID='BQMNURPTBILRESTT'
+go
+
+
+--FP Amendment Audit'
+--------------------------------
+Insert into PRG_MENU values ('BQ    ','2','5','90','E','BQ~2~5~90~E  ','BQ~1~0~5~E   ','FP Amendment Audit','1','BQMNURPTFPAMEND',Null,'0','0','0','1','Admin ','05/09/2006 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../BQReports/BQReserAmendAuditRpt',Null,Null)
+GO
+update PRG_MENU set W_IND='1' ,W_LINK='../BQReports/BQReserAmendAuditRpt' where PROGRAM_LINK_ID='BQMNURPTFPAMEND'
+go
+
+-----20/4/23-------
+
+----BQ ADVANCE REPRINT
+UPDATE PRG_MENU set W_LINK='../BQPrint/BQAdvReprint' where MODULE_ID='BQ' AND PROGRAM_LINK_ID='BQMNUTRNADVREPRNT'
+go
+
+----BQ FP REPRINT
+
+UPDATE  PRG_MENU set W_LINK='../BQPrint/BQFPReprint' where MODULE_ID='BQ' AND PROGRAM_LINK_ID='BQMNUTRNFPREPRNT'
+go
+
+---BQ BILL  REPRINT
+
+UPDATE PRG_MENU SET W_IND =1, W_LINK='..\BQPrint\BQBillReprint' WHERE MODULE_ID='BQ' AND PROGRAM_LINK_ID ='BQMNUTRNBILLREPRNT'
+go
+
+--COVER ANALYSIS---23/5/23
+
+Insert into PRG_MENU values ('BQ     ','2','6','13','E','BQ~2~6~13~E   ','BQ~1~0~6~E    ','Cover Analysis','1','BQMNUQCOVANAL',Null,'0','0','0','1','Admin ','03/05/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'0','../BQReport/BQCoverAnalysis',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND='1' ,W_LINK='../BQAnalysis/BQCoverAnalysisRpt' WHERE PROGRAM_LINK_ID='BQMNUQCOVANAL'
+GO
+
+--popularity analysis--25-5-23
+
+Insert into PRG_MENU values ('BQ      ','2','6','10','E','BQ~2~6~10~E    ','BQ~1~0~6~E     ','Popularity Analysis','1','BQMNURPTPOPANA',Null,'0','0','0','1','Admin ','03/05/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'0','../BQReport/BQPopularityAnalysis',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND='1' ,W_LINK='../BQAnalysis/BQPopularityAnalysisRpt' WHERE PROGRAM_LINK_ID='BQMNURPTPOPANA'
+GO
+
+
+---BANQUET ANALYSIS---30/5/23
+
+UPDATE PRG_MENU SET W_IND='1' ,W_LINK='../BQReports/BanquetQAnalysisRpt' WHERE PROGRAM_LINK_ID='BQMNURPTBQANALY'
+GO
+
+
+---30-6-23->kot audit
+
+Insert into PRG_MENU values ('BQ      ','2','5','80','E','BQ~2~5~80~E    ','BQ~1~0~5~E     ','KOT Audit','1','BQMNURPTKOTAUDIT',Null,'0','0','0','1','Admin ','05/09/2006 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../BQReports/BQKotAuditRpt' WHERE PROGRAM_LINK_ID ='BQMNURPTKOTAUDIT'
+go
+
+----Itemwise Sales(29/8/23)
+
+Insert into PRG_MENU values ('BQ      ','2','6','3','E','BQ~2~6~3~E     ','BQ~1~0~6~E     ','Itemwise Sales','1','BQMNUQBQITEMSALES',Null,'0','0','0','1','Admin ','03/05/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../BQAnalysis/BQItemWiseSalesRpt' WHERE PROGRAM_LINK_ID ='BQMNUQBQITEMSALES'
+go
+
+
+----Function of the day(26/04/24)
+  update PRG_MENU set W_IND =1 ,W_LINK='../BQQueries/BQFunOftheDayRpt' where PROGRAM_LINK_ID='BQMNUQFNFORDAY'
+go
+
+-------Pending Bills(26/04/24)
+ update PRG_MENU set W_IND =1 ,W_LINK='../BQQueries/BQPendingBills' where PROGRAM_LINK_ID='BQMNURPTPENDBILL'
+
+
+----Banquet Outlet(03/05/2024)
+
+Insert into PRG_MENU values ('BQ      ','2','3','62','E','BQ~2~3~62~E    ','BQ~1~0~3~E     ','Banquet Outlet','1','BQMNUMSTOUTBQT',Null,'1','1','1','1','Admin ','03/05/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'0','../BQMASTER/BQMSTBQTOUTLET',Null,Null)
+GO
+
+ update prg_menu set w_ind = '1' ,W_LINK='..\BQMaster\BQMstOutlet' where PROGRAM_LINK_ID='BQMNUMSTOUTBQT'
+go
+
+
+-----BQ-BILL
+
+update PRG_MENU  set W_LINK='../BQPrint/BQBillReprint?TRN=B',w_ind = 1 where  PROGRAM_LINK_ID='BQMNUTRNBILLREPRNT'
+go
+
+------Provisional BILL
+
+update PRG_MENU set W_IND =1 ,W_LINK='../BQBill/BanQuetBillNew?Type=2' where PROGRAM_LINK_ID='BQMNUTRNCHALLANCRPRNT'
+GO
+
+------Provisional--Print
+
+Insert into PRG_MENU values ('BQ      ','2','2','26','E','BQ~2~2~13~E    ','BQ~1~0~2~E     ','Provisional Bill Reprint','1','BQMNUTRNCHALLANREPRNT',Null,'1','1','1','1','Admin ','03/05/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+
+update PRG_MENU  set W_LINK='../BQPrint/BQBillReprint?TRN=H',w_ind = 1 where  PROGRAM_LINK_ID='BQMNUTRNCHALLANREPRNT'
+go
+
+
+----------Reservation - ReInstate
+
+Insert into PRG_MENU values ('BQ ','2','1','4','E','BQ~2~1~4~E ','BQ~1~0~1~E ','Reservation - ReInstate','1','BQMNUTRNBQRSVREINS',Null,'1','1','1','1','Admin ','03/05/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'../BQBill/BanQuetBillNew?Type=1',Null,Null)
+go
+
+update PRG_MENU set W_IND =1 ,W_LINK='../BQTrans/BQReservation?Type=3' where  PROGRAM_LINK_ID='BQMNUTRNBQRSVREINS'
+go
+
+-------------------NC-KOT-Summary(30/05/24)
+
+Insert into PRG_MENU values ('BQ      ','2','5','43','E','BQ~2~5~43~E    ','BQ~1~0~5~E     ','NC-KOT-Summary','1','BQMNURPTNCKOTPROGRP',Null,'0','0','0','1','Admin ','03/05/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\BQReports\BQRptNckotSum' WHERE PROGRAM_LINK_ID ='BQMNURPTNCKOTPROGRP'
+GO
+
+
+
+

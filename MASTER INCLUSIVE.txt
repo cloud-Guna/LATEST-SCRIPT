@@ -1,0 +1,263 @@
+
+-------------Purchase Billwise Summary-------------
+
+Insert into PRG_MENU values ('MT      ','2','13','71','E','MT~2~13~71~E   ','MT~1~0~13~E    ','Purchase Billwise Summary','1','MTMNURPTPURSUMRY',Null,'0','0','0','1','Admin ','07/12/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MT\GstPurBillwiseSum.aspx?RPT=2',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK = '/MstReports/MstPurchaseBillwiseSummary' WHERE PROGRAM_LINK_ID = 'MTMNURPTPURSUMRY' AND MODULE_ID = 'MT'
+GO
+
+-------------SALES Billwise Summary-------------
+
+Insert into PRG_MENU values ('MT      ','2','13','45','E','MT~2~13~45~E   ','MT~1~0~13~E    ','Sales Billwise Summary','1','MTMNURPTSALESSUMRY',Null,'0','0','0','1','Admin ','07/12/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','/MstReports/MstSalesBillwiseSummary',Null,Null)
+GO
+
+
+UPDATE PRG_MENU SET W_LINK = '/MstReports/MstSalesBillwiseSummary' WHERE PROGRAM_LINK_ID = 'MTMNURPTSALESSUMRY' AND MODULE_ID = 'MT'
+GO
+
+-------------SALES Billwise Details-------------
+
+Insert into PRG_MENU values ('MT      ','2','13','46','E','MT~2~13~46~E   ','MT~1~0~13~E    ','Sales Billwise Details','1','MTMNURPTSALESDET',Null,'0','0','0','1','Admin ','07/12/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MT\GstSaleBillDetails.aspx?RPT=2',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK = '/MstReports/MstSalesBillTaxRatewiseDetails' WHERE PROGRAM_LINK_ID = 'MTMNURPTSALESDET' AND MODULE_ID = 'MT'
+GO
+
+-------------Purchase Billwise Details -------------
+
+Insert into PRG_MENU values ('MT      ','2','13','72','E','MT~2~13~72~E   ','MT~1~0~13~E    ','Purchase Billwise Details','1','MTMNURPTPURDET',Null,'0','0','0','1','Admin ','07/12/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MT\GstPurBillDetails.aspx?RPT=2',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_LINK = '/MstReports/MstPurchaseBillwiseDetails' WHERE PROGRAM_LINK_ID = 'MTMNURPTPURDET' AND MODULE_ID = 'MT'
+go
+
+
+
+-----07/01/2023---------Product Master List-----
+
+Insert into PRG_MENU values ('MT  ','2','7','19','E','MT~2~7~19~E','MT~1~0~7~E',' Material Request Reprint','1','MTRPTMTIREPIREPRT',Null,'1','1','1','1','Admin ','12/19/2022 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../MstReports/MstPurchaseProductList',Null,Null)
+go
+
+UPDATE PRG_MENU SET MENU_NM = 'Product Master List' WHERE PROGRAM_LINK_ID = 'MTRPTMTIREPIREPRT' AND MODULE_ID = 'MT'
+go
+
+
+------------13/01/2023------------
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstProductCategory' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTGENPRODPRODCAT'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstProductNature' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTGENPRODPRODNATRE'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstUnitOfMeasure' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTGENUOMUOMMST'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstItemRequestCategory' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTMNUMSTITMREQCAT'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstProductMajorGroup' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTMNUMSTMAJGRP'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstReqCatMajorGroupLink' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTMNUMSTRQCATMAJGRPLNK'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstProductSubGroup' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTGENPRODSUBGR'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\MstProductGroup' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTGENPRODPRODGROUP'
+GO
+
+UPDATE PRG_MENU SET W_IND = 1,W_LINK='..\Master\Mst_Product' WHERE MODULE_ID ='MT' AND PROGRAM_LINK_ID ='MTGENPRODMST'
+GO
+
+UPDATE PRG_MENU SET W_LINK='..\Reports\FoNightAuditReport?VMD=MST',W_IND=1 WHERE MODULE_ID='MT' AND PROGRAM_LINK_ID='MTMNUNANANAGAUDRPT'
+GO
+
+----Cess Rate-Qty Multiplier--24/02/23
+
+Insert into PRG_MENU values ('MT      ','2','13','29','E','MT~2~13~29~E   ','MT~1~0~13~E    ','Cess Rate-Qty Multiplier','1','MTMSTCQM',Null,'1','1','1','1','Admin ','01/16/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND='1' ,W_LINK='../Master/MstRateQtyMultiplier' WHERE PROGRAM_LINK_ID='MTMSTCQM'
+go
+
+--Email Template -22/05/23
+Insert into PRG_MENU values ('MT      ','2','2','47','E','MT~2~2~47~E','MT~1~0~2~E','Editor','1','MSTEMAILTEMPEDITOR',Null,'1','1','1','1','Admin ','07/10/2018 14:44:25',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\EmailTemplateEditor',Null,Null)
+GO
+
+
+-----Import master---9-5-23
+
+Insert into PRG_MENU values ('MT     ','2','1','70','E','MT~2~1~70~E    ','MT~1~0~1~E    ','Import Masters','1','MTGENIMPMST',Null,'1','1','1','1','Admin ','07/23/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MstImportMasterData',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\Master\MstImportMasterData' WHERE PROGRAM_LINK_ID ='MTGENIMPMST'
+go
+
+
+-----BULK INSERT
+Insert into PRG_MENU values ('MT  ','2','1','71','E','MT~2~1~71~E ','MT~1~0~1~E ','Bulk Update','1','MTGENBULKUPDATE',Null,'1','1','1','1','Admin ','07/23/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MstBulkUpdate',Null,Null)
+GO
+
+---tax master--4/1/23---
+ update prg_menu set w_ind=1,w_link ='..\Master\MstTax' where PROGRAM_link_id='MTSETGTAXMST'
+go
+
+
+----MST Past Advances Adjusted 
+
+Insert into PRG_MENU values ('MT      ','2','13','44','E','MT~2~13~44~E   ','MT~1~0~13~E    ','Past Advances Adjusted','1','MTMNURPTPASTADVADJUST',Null,'0','0','0','1','Admin ','08/07/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../MstReports/PastAdvancesAdjusted' WHERE PROGRAM_LINK_ID ='MTMNURPTPASTADVADJUST'
+go
+
+--- mst Current Advances Adjusted
+
+Insert into PRG_MENU values ('MT      ','2','13','43','E','MT~2~13~43~E   ','MT~1~0~13~E    ','Current Advances Adjusted','1','MTMNURPTCURRADVADJUST',Null,'0','0','0','1','Admin ','08/07/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='../MstReports/CurrentAdvancesAdjusted' WHERE PROGRAM_LINK_ID ='MTMNURPTCURRADVADJUST'
+go
+
+---MST Zone
+
+Insert into PRG_MENU values ('MT      ','2','3','14','E','MT~2~3~14~E    ','MT~1~0~3~E     ','Zone','1','MTGENZONE',Null,'1','1','1','1','Admin ','03/18/2003 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1 , W_LINK ='../Master/MstZone' WHERE PROGRAM_LINK_ID='MTGENZONE'
+GO
+
+--Mst Country
+
+Insert into PRG_MENU values ('MT      ','2','3','5','E','MT~2~3~5~E     ','MT~1~0~3~E     ','Country','1','MTGENCOUNMST',Null,'1','1','1','1','Admin ','03/18/2003 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1 , W_LINK ='../Master/MstCountry' WHERE PROGRAM_LINK_ID='MTGENCOUNMST'
+GO
+
+
+---22/09/2023
+
+--custom report
+Insert into PRG_MENU values ('MT      ','1','0','22','E','MT~1~0~22~E    ','MENU           ','Custom Report','1','MTCUSRPT',Null,Null,Null,Null,Null,'Admin ','12/09/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+
+--User Privileges
+Insert into PRG_MENU values ('MT      ','2','22','10','E','MT~2~22~10~E   ','MT~1~0~22~E    ','User Privileges','1','MSTUSRPRIVLIGS',Null,'1','1','1','1','Admin ','12/09/2023 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\UserPrivileges',Null,Null)
+GO
+
+
+---Report Design
+Insert into PRG_MENU values ('MT     ','2','22','12','E','MT~2~22~12~E  ','MT~1~0~22~E   ','Report Design','1','MSTRPTDESIGN',Null,'1','1','1','1','Admin ','2023/09/23 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MstCustomReport',Null,Null)
+GO
+
+
+---Auto Mail Schedule
+
+Insert into PRG_MENU values ('MT      ','2','22','14','E','MT~2~22~14~E   ','MT~1~0~22~E    ','Auto Mail Schedule','1','MSTAUTSCHDLR',Null,'1','1','1','1','Admin ','2023/09/23 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\AutoMailSchedule',Null,Null)
+GO
+
+
+-- GST TAX --10-5-23	
+
+UPDATE PRG_MENU SET W_IND=1 ,W_LINK='../Master/MstGstTax' WHERE PROGRAM_LINK_ID='MTGSTACCNEW'
+GO
+
+-----------------vat tax
+
+update prg_menu set MENU_NM='VAT Tax' , W_LINK='../Master/TaxCodeMst' where program_Link_id='MTGCCVATACC'
+go
+
+
+
+--------mobile master
+
+update PRG_MENU set W_LINK='../Master/MstSMSStandAlone' WHERE PROGRAM_LINK_ID='MobileMaster'
+go
+
+
+---------SMS TEMPLATE
+UPDATE prg_menu SET PROGRAM_LINK_ID='MTMSTSMSTMPL'  WHERE MENU_NM='SMS Template'
+GO
+
+UPDATE prg_menu SET W_IND = 1 ,W_LINK='../Master/MstSmsTemplate' WHERE PROGRAM_LINK_ID='MTMSTSMSTMPL'
+GO
+
+
+
+--12/05/23
+Insert into PRG_MENU values ('MT      ','2','1','67','E','MT~2~1~67~E    ','MT~1~0~1~E     ','Alternate Language','1','MTMNUMSTRALTERNAME',Null,Null,'1',Null,'1','Admin ','11/30/2017 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update PRG_MENU set w_ind=1,W_LINK = '../Master/MstMstrAltnteNm' where MODULE_ID = 'MT' and PROGRAM_LINK_ID = 'MTMNUMSTRALTERNAME'
+go
+
+
+-----------------------------HSN/SAC Codes
+
+UPDATE PRG_MENU set W_LINK='../Master/MstHsnSac' where PROGRAM_LINK_ID ='MTHSNSAC'
+GO
+----------------------GST Tax Registration
+
+UPDATE PRG_MENU set W_LINK='../Master/MstGstTaxReg' where PROGRAM_LINK_ID ='MTGSTTAXREG'
+GO
+
+-----GSTR1 Excel Upload(09/01/24)
+update prg_menu set W_LINK = '../MstReports/GstExcelExportRpt' where program_link_id= 'MTMNUREPGSTR1EXCEL'
+go
+
+--------09/01/24
+Insert into PRG_MENU values ('MT    ','2','2','67','E','MT~2~2~67~E','MT~1~0~2~E','IP Restriction-Users','1','MSTAUTHUSRMST',Null,'1',
+ '1','1','1','Admin ','01/01/2024 14:44:25',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
+ '1','..\Master\AuthorizeipUserMaster',Null,Null)
+GO
+
+-------10/01/24
+INSERT INTO PRG_MENU VALUES ('MT     ','2','2','46','E','MT~2~2~46~E','MT~1~0~2~E','Document Print Template','1','MSTDOCPRTTEMPLT',Null,'1','1','1','1','Admin ','07/08/2023',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\DocumentTemplate',Null,Null)
+GO
+update PRG_MENU set MENU_NM='Doc Print Template' where PROGRAM_LINK_ID='MSTDOCPRTTEMPLT'
+go
+
+------------Supplier master 
+
+
+update PRG_MENU set W_LINK='..\Master\MstSupplier' where PROGRAM_LINK_ID='MTGENSUPPMST'
+
+GO
+
+--Region Master
+Insert into PRG_MENU values ('MT      ','2','3','20','E','MT~2~3~20~E    ','MT~1~0~3~E     ','Region','1','MTGENREGIONMST',Null,'1','1','1','1','Admin ','03/18/2003 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+go
+update PRG_MENU set W_IND = '1' , W_LINK= '..\Master\MstRegion' WHERE PROGRAM_LINK_ID = 'MTGENREGIONMST'
+go
+
+
+
+----Department Master
+
+update PRG_MENU set w_ind=1, w_link='..\Master\MstDepartment' where program_link_id='MTGENDEPARTMST'
+go
+
+--GCC Vat SalesBillwise Summary
+
+update prg_menu set w_ind = '1' ,W_LINK='..\MstReports\MstGCCVatSalesBillSummary' where PROGRAM_LINK_ID='MTMNURPTSALESTAXSUMRY'
+GO
+
+
+---VAT Purchase Billwise Tax Details
+
+update prg_menu set w_ind = '1' ,W_LINK='..\MstReports\MstGCCPurBillWiseTaxDet' where PROGRAM_LINK_ID='MTMNURPTPURVATDET'
+go
+
+
+-----------GCC VAT Purchase Billwise Tax Summary---------
+
+Insert into PRG_MENU values ('MT      ','2','15','41','E','MT~2~15~41~E   ','MT~1~0~15~E    ','Purchase Billwise Tax Summary','1',
+'MTMNURPTPURTAXSUMRY',Null,'0','0','0','1','Admin ','07/12/2017 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',
+'..\MT\GCCVATPurchaseBillwiseSum.aspx',Null,Null)
+GO
+
+UPDATE PRG_MENU SET W_IND=1,W_LINK='..\MstReports\MstGCCVatPurBillSummary' WHERE PROGRAM_LINK_ID ='MTMNURPTPURTAXSUMRY'
+GO

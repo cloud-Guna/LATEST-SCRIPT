@@ -1,0 +1,108 @@
+
+
+--Thailand
+Insert into PRG_MENU values ('MT      ','1','0','27','E','MT~1~0~27~E    ','MENU           ','Thailand','1','MTMNUTHAI',Null,Null,Null,Null,Null,'Admin ','01/31/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','27','1','E','MT~2~27~1~E    ','MT~1~0~27~E    ','Thai VAT Report','1','MTMNUREPTHAIVATRPT',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Reports\FoR1ThaiVATReport',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','27','2','E','MT~2~27~2~E    ','MT~1~0~27~E    ','Thai Immigration Report','1','MTMNUTHAIIMMRPT',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\ThailandImmigRpt',Null,Null)
+GO
+
+--Loyalty
+Insert into PRG_MENU values ('MT      ','1','0','23','E','MT~1~0~23~E    ','MENU           ','Loyalty','1','MTMNULOYTY',Null,Null,Null,Null,Null,'Admin ','01/31/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','23','1','E','MT~2~23~1~E    ','MT~1~0~23~E    ','MLoyal','1','MTMNUREPMLOYALRPT',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MLoyalReport',Null,Null)
+GO
+
+--PHILIPPINES
+Insert into PRG_MENU values ('MT      ','1','0','20','E','MT~1~0~20~E    ','MENU           ','PHILIPPINES','1','MTMNUPHILIPP',Null,Null,Null,Null,Null,'Admin ','01/31/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','20','1','E','MT~2~20~1~E    ','MT~1~0~20~E    ','BIR','1','MTMNUBIR',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../Reports/FoSalesReport',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','20','2','E','MT~2~20~1~E    ','MT~1~0~20~E    ','BIR Control Total','1','MTMNUBIRCNTRLTOT',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','../Master/Mst_BIRControl',Null,Null)
+GO
+
+--Nepal
+Insert into PRG_MENU values ('MT      ','1','0','21','E','MT~1~0~21~E    ','MENU           ','Nepal','1','MTMNUNEPAL',Null,Null,Null,Null,Null,'Admin ','01/31/2019 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','21','1','E','MT~2~21~1~E    ','MT~1~0~21~E    ','Materialized View','1','MTMNUMATVW',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstRptMaterializedView',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','21','2','E','MT~2~21~2~E    ','MT~1~0~21~E    ','Sales Register','1','MTMNUSALESRGTR',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstRptSalesRegister?Type=1',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','21','3','E','MT~2~21~3~E    ','MT~1~0~21~E    ','Sales Return Register','1','MTMNUSALESRTRNRGTR',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstRptSalesReturnReg',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','21','4','E','MT~2~21~4~E    ','MT~1~0~21~E    ','Audit Trail','1','MTMNUAUDITTRAL',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstRptAuditTrail',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','21','5','E','MT~2~21~5~E    ','MT~1~0~21~E    ','Purchase Register','1','MTMNUPURRGTR',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstRptPurchaseRegister',Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','21','6','E','MT~2~21~6~E    ','MT~1~0~21~E    ','Room Sales Tax Invoice','1','MTMNURMSALTAXINV',Null,'0','0','0','1','Admin ','01/31/2019 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstRptRoomSalesTaxInv',Null,Null)
+GO
+
+--18/11/23
+Insert into PRG_MENU values ('MT','2','11','25','E','MT~2~11~25~E' ,'MT~1~0~11~E'  ,'Temp FolioCreation',1,'MTMNURSVTMPFOLIO',NULL,1,1,1,1,'Admin' ,'2002-01-25 00:00:00.000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)
+go
+UPDATE PRG_MENU SET W_IND = 1, w_link='../FOMaster/TempFolioMaster?VMD=MST' WHERE MODULE_ID='MT' AND PROGRAM_LINK_ID='MTMNURSVTMPFOLIO'
+GO
+Insert into PRG_MENU values ('MT' ,'2','11','26','E','MT~2~11~26~E','MT~1~0~11~E','TempFolioSettlement','1','MTMNUCASPAYMSTSETTLE',Null,'1','1','1','1','Admin','08/20/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\TravelAgentBlock\TempFolioSettlement',Null,Null)
+GO
+UPDATE PRG_MENU SET W_LINK='..\TravelAgentBlock\TempFolioSettlement?VMD=MST',W_IND=1 WHERE MODULE_ID='MT' AND PROGRAM_LINK_ID='MTMNUCASPAYMSTSETTLE'
+GO
+Insert into PRG_MENU values ('MT','2','11','27','E','MT~2~11~27~E','MT~1~0~11~E','Temp FolioLedger','1','MTMNUREP2PAYMSTLDGR',Null,'0','0','0','1','Admin','10/16/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,1,'../Reports/FoTempFolioLedgr',Null,Null)
+GO
+UPDATE PRG_MENU SET W_LINK='../Reports/FoTempFolioLedgr?VMD=MST',W_IND=1 WHERE MODULE_ID='MT' AND PROGRAM_LINK_ID='MTMNUREP2PAYMSTLDGR'
+GO
+
+
+--crossposting -Masters ->04/01/24
+Insert into PRG_MENU values ('MT      ','2','10','16','E','MT~2~10~16~E   ','MT~1~0~10~E    ','Cross Posting Outlets','1','MTMNUINTFCRSPSTPROP',Null,Null,'1',Null,Null,'Admin ','07/23/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','10','17','E','MT~2~10~17~E   ','MT~1~0~10~E    ','Cross Posting Destination','1','MTMNUINTFCRSPSTPROPREV',Null,Null,'1',Null,Null,'Admin ','07/23/2002 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set w_link = '../Master/MstCrPostProp' , w_ind = '1' where module_id = 'MT' and PROGRAM_LINK_ID = 'MTMNUINTFCRSPSTPROP'
+go
+update prg_menu set w_link = '../Master/MstDrPrpRev' , w_ind = '1' where module_id = 'MT' and PROGRAM_LINK_ID = 'MTMNUINTFCRSPSTPROPREV'
+go
+
+--06/01/24 web app module/menu privelege
+Insert into PRG_MENU values ('MT      ','2','3','45','E','MT~2~3~45~E    ','MT~1~0~3~E     ','App Applicable User','1','MTMNUAPPAPPLUSER',Null,'0','1','0','0','Admin ','07/20/2020 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,null,null,null,null)
+go
+Insert into PRG_MENU values ('MT      ','2','3','47','E','MT~2~3~47~E    ','MT~1~0~3~E     ','App Menu Privilege','1','MTMNUAPPMENUPREV',Null,'0','1','0','0','Admin ','07/20/2020 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,null,null,null,null)
+go
+update  PRG_MENU set W_LINK='../Master/AppModPrivileg' where MODULE_ID='MT' and PROGRAM_LINK_ID='MTMNUAPPAPPLUSER'
+go
+update  PRG_MENU set W_LINK='../Master/AppModMenuPrivil' where MODULE_ID='MT' and PROGRAM_LINK_ID='MTMNUAPPMENUPREV'
+go
+
+
+Insert into PRG_MENU values ('MT      ','2','10','18','E','MT~2~10~18~E   ','MT~1~0~10~E    ','Cross Posting Report','1','MTMNUINTFCRSPSTPROPRPT',Null,Null,Null,Null,'1','Admin ','07/23/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+Insert into PRG_MENU values ('MT      ','2','10','19','E','MT~2~10~19~E   ','MT~1~0~10~E    ','Cross Posting Entries from Other Properties','1','MTMNUINTFCRSPSTFRPROPRPT',Null,Null,Null,Null,'1','Admin ','07/23/2002 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+GO
+update prg_menu set W_IND = '1' ,W_LINK = '../MstReports/MstRptCrsPostProp' where PROGRAM_LINK_ID = 'MTMNUINTFCRSPSTPROPRPT'
+go
+update prg_menu set W_IND = '1' ,W_LINK = '../MstReports/MstRptCrsPostEntFrmOthProp' where PROGRAM_LINK_ID = 'MTMNUINTFCRSPSTFRPROPRPT'
+go
+
+
+Insert into PRG_MENU values ('MT      ','2','16','10','E','MT~2~16~10~E   ','MT~1~0~16~E    ','Revenue Multi Property','1','MTMNUREVMULPRP',Null,'0','1','0','0','Admin ','07/12/2017 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND = '1' ,W_LINK = '../Master/MstRevenueMultiProperty' WHERE PROGRAM_LINK_ID = 'MTMNUREVMULPRP' AND MODULE_ID = 'MT'
+go
+
+Insert into PRG_MENU values ('MT      ','2','16','11','E','MT~2~16~11~E   ','MT~1~0~16~E    ','Company Multi Property','1','MTMNUCMPPROFMULPRP',Null,'0','1','0','0','Admin ','07/12/2017 00:00:00',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,'1',Null,Null,Null)
+GO
+UPDATE PRG_MENU SET W_IND = '1' ,W_LINK = '../Master/MstCompanyMultiProperty' WHERE PROGRAM_LINK_ID = 'MTMNUCMPPROFMULPRP' AND MODULE_ID = 'MT'
+GO
+
+update prg_menu set menu_nm='BIR' where module_id='mt' and program_link_id='MTMNUPHILIPP'
+  Insert into PRG_MENU values ('MT      ','2','20','4','E','MT~2~20~4~E    ','MT~1~0~20~E    ','Sales Journal','1','MTRPTSALSJOURL',Null,'0','0','0','1','Admin ','04/18/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstSalesJournal',Null,Null)
+GO
+ Insert into PRG_MENU values ('MT      ','2','20','5','E','MT~2~20~5~E    ','MT~1~0~20~E    ','PurchasesJournal','1','MTRPTPURSEJOURL',Null,'0','0','0','1','Admin ','04/18/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\MstReports\MstPurchasesJournal',Null,Null)
+GO
+update prg_menu set w_link='..\MstReports\MstPurchasesJournal' where module_id='mt' and program_link_id='MTRPTPURSEJOURL'
+Insert into PRG_MENU values ('MT      ','2','20','2','E','MT~2~20~2~E    ','MT~1~0~20~E    ','BIR NumberSeries','1','MTBIRNYMBSERS',Null,'0','0','0','1','Admin ','04/09/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MstBIRNumberSeries',Null,Null)
+GO
+ Insert into PRG_MENU values ('MT      ','2','20','3','E','MT~2~20~3~E    ','MT~1~0~20~E    ','BIR BillSettings','1','MTBIRBILLSETTS',Null,'0','0','0','1','Admin ','04/09/2024 00:00:00','1',Null,Null,Null,Null,Null,Null,Null,Null,Null,'1','..\Master\MSTBIRbillSettings',Null,Null)
+GO
+
+
