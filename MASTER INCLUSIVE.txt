@@ -261,3 +261,52 @@ GO
 
 UPDATE PRG_MENU SET W_IND=1,W_LINK='..\MstReports\MstGCCVatPurBillSummary' WHERE PROGRAM_LINK_ID ='MTMNURPTPURTAXSUMRY'
 GO
+
+update prg_menu set MENU_NM = 'Master' where module_id = 'mt' and NODE_KEY = 'MT~1~0~1~E     '
+go
+update prg_menu set MENU_NM = 'Privileges' where module_id = 'mt' and NODE_KEY = 'MT~1~0~2~E         '
+go
+update prg_menu set PARENT_SEQ_NO = 1,SEQ_NO = 75 where NODE_KEY = 'MT~2~2~22~E       '
+go
+update prg_menu set PARENT_SEQ_NO = 1,SEQ_NO = 76 where NODE_KEY = 'MT~2~2~24~E       '
+go
+update prg_menu set PARENT_SEQ_NO = 1,SEQ_NO = 77 where NODE_KEY = 'MT~2~2~25~E      '
+go
+update prg_menu set PARENT_SEQ_NO = 1,SEQ_NO = 78 where NODE_KEY = 'MT~2~2~27~E      '
+go
+update prg_menu set PARENT_SEQ_NO = 1,SEQ_NO = 79 where NODE_KEY = 'MT~2~2~51~E       '
+go
+update prg_menu set NODE_KEY = 'MT~2~1~75~E ',PARENT_KEY = 'MT~1~0~1~E     '  where PARENT_SEQ_NO = 1 and SEQ_NO = 75 and module_id = 'mt'
+go
+update prg_menu set NODE_KEY = 'MT~2~1~76~E ',PARENT_KEY = 'MT~1~0~1~E     '  where PARENT_SEQ_NO = 1 and SEQ_NO = 76 and module_id = 'mt'
+go
+update prg_menu set NODE_KEY = 'MT~2~1~77~E ',PARENT_KEY = 'MT~1~0~1~E     '  where PARENT_SEQ_NO = 1 and SEQ_NO = 77 and module_id = 'mt'
+go
+update prg_menu set NODE_KEY = 'MT~2~1~78~E ',PARENT_KEY = 'MT~1~0~1~E     '  where PARENT_SEQ_NO = 1 and SEQ_NO = 78 and module_id = 'mt'
+go
+update prg_menu set NODE_KEY = 'MT~2~1~79~E ',PARENT_KEY = 'MT~1~0~1~E     '  where PARENT_SEQ_NO = 1 and SEQ_NO = 79 and module_id = 'mt'
+go
+UPDATE PRG_MENU SET PARENT_SEQ_NO = '10',SEQ_NO = '96',NODE_KEY =  'MT~2~10~96~E', PARENT_KEY = 'MT~1~0~10~E' WHERE MENU_NM = 'SMS Template'
+go
+UPDATE PRG_MENU SET PARENT_SEQ_NO = '10',SEQ_NO = '97',NODE_KEY =  'MT~2~10~97~E', PARENT_KEY = 'MT~1~0~10~E' WHERE MENU_NM = 'SMS Settings'
+go
+UPDATE PRG_MENU SET PARENT_SEQ_NO = '10',SEQ_NO = '98',NODE_KEY =  'MT~2~10~98~E', PARENT_KEY = 'MT~1~0~10~E' WHERE MENU_NM = 'NightAudit Alert'
+go
+UPDATE PRG_MENU SET PARENT_SEQ_NO = '10',SEQ_NO = '99',NODE_KEY =  'MT~2~10~99~E', PARENT_KEY = 'MT~1~0~10~E' WHERE MENU_NM = 'Mobile Master'
+go
+delete FROM PRG_MENU WHERE Menu_nm = 'change password' and module_id = 'mt'
+go
+update PRG_MODULE set module_nm='Settings',MODULE_SHRT_NM ='Settings' where MODULE_ID='mt'
+go
+update PRG_MODULE1 set module_nm='Settings',MODULE_SHRT_NM ='Settings' where MODULE_ID='mt'
+go
+
+delete from PRG_MENU where MODULE_ID='mt' and PROGRAM_LINK_ID='MSTEMAILIMGUPLOAD'
+
+
+
+
+
+
+
+
