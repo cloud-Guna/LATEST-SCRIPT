@@ -456,7 +456,9 @@ go
 update prg_menu set w_ind=1,w_link='../TravelAgentBlock/FORoomBlocking?MODID=HK' where module_id='HK' and program_link_id='HKMNUTRNROOMBLK'
 go
 
-
+-----monthwise room position menu should not appear, only for privilege to be given.
+UPDATE PRG_MENU SET W_IND=NULL WHERE MODULE_ID='FO' AND PROGRAM_LINK_ID='FOMNUQUROOMPOSQU'
+go
 
 
 
